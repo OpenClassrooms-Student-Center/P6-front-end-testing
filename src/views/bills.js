@@ -1,1 +1,1 @@
-const bills = `<h1> Bill List </h1>`
+export default `<h1> Bill List </h1>`

@@ -1,14 +1,15 @@
+import signin from "./views/signin.js"
+import bills from "./views/bills.js"
+
 const routes = {
   '/' : signin,
   '/bills' : bills,
 }
-
-console.log('routes', routes)
  
 const rootDiv = document.getElementById('root')
 rootDiv.innerHTML = routes[window.location.pathname]
 
-const onNavigate = (pathname) => {
+window.onNavigate = (pathname) => {
   window.history.pushState(
     {},
     pathname,
