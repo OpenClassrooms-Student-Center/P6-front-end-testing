@@ -1,10 +1,12 @@
 const routes = {
   '/' : signin,
-  '/bills' : bills
-};
+  '/bills' : bills,
+}
 
-const rootDiv = document.getElementById('root');
-rootDiv.innerHTML = routes[window.location.pathname];
+console.log('routes', routes)
+ 
+const rootDiv = document.getElementById('root')
+rootDiv.innerHTML = routes[window.location.pathname]
 
 const onNavigate = (pathname) => {
   window.history.pushState(
