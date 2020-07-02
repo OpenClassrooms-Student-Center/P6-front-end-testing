@@ -9,11 +9,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Billable</title>
   </head>
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      background-color:#0e5ae5;
+      /* font-family: Roboto; */
+    }
+    #root {
+      width: 80%;
+      margin: auto;
+    }
+  </style>  
   <body>
-    <ul class="navbar-list">
-      <li class="navbar-item"><a href="#" onclick="window.onNavigate('/'); return false;">Sign In</a></li>
-      <li class="navbar-item"><a href="#" onclick="window.onNavigate('/bills'); return false;">Bills list</a></li>
-    </ul>
     <div id="root"></div>
     <script type="module" src="src/app.js"></script>
 
