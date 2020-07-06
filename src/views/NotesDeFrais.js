@@ -1,1 +1,0 @@
-export default `<h1> Notes de Frais </h1>`

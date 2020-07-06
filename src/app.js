@@ -1,18 +1,16 @@
 import Login from "./views/Login.js"
-import NoteDeFrais from "./views/NotesDeFrais.js"
-import NouvelleNoteDeFrais from "./views/nouvelleNoteDeFrais.js"
+import Bills from "./views/Bills.js"
+import NewBill from "./views/NewBill.js"
 import Dashboard from "./views/Dashboard.js"
 import DashboardSelected from "./views/DashboardSelected.js"
 
 const routes = {
   '/' : Login,
-  '/employe/note-de-frais' : NoteDeFrais,
-  '/employe/note-de-frais/nouvelle' : NouvelleNoteDeFrais,
+  '/employe/note-de-frais' : Bills,
+  '/employe/note-de-frais/nouvelle' : NewBill,
   '/admin/dashboard' : Dashboard,
   '/admin/dashboard-selected' : DashboardSelected,
 }
-
-const store = {}
  
 const rootDiv = document.getElementById('root')
 rootDiv.innerHTML = routes[window.location.pathname]
@@ -38,24 +36,24 @@ const formEmployee = document.getElementById("form-employee")
 const formAdmin = document.getElementById("form-admin")
 
 formEmployee.addEventListener("submit", e => {
-    store["user"] = {
-      type: "Employee",
+    localStorage.setItem("user", JSON.stringify({
+      type: "User",
       email: document.getElementById('inputEmailEmployee').value,
-      password: document.getElementById('inputPasswordEmployee').value
-    }
-    console.log("store", JSON.stringify(store))
+      password: document.getElementById('inputPasswordEmployee').value,
+      status: "connected"
+    }))
     e.preventDefault()
     onNavigate('/employe/note-de-frais')
     document.body.style.backgroundColor="#fff"
 })
 
 formAdmin.addEventListener("submit", e => {
-  store["user"] = {
+  localStorage.setItem("user", JSON.stringify({
     type: "Admin",
     email: document.getElementById('inputEmailEmployee').value,
-    password: document.getElementById('inputPasswordEmployee').value
-  }
-  console.log("store", JSON.stringify(store))
+    password: document.getElementById('inputPasswordEmployee').value,
+    status: "connected"
+  }))
   e.preventDefault()
   onNavigate('/admin/dashboard')
   document.body.style.backgroundColor="#fff"
