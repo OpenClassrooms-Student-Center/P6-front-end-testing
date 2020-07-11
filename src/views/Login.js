@@ -1,8 +1,4 @@
 export default () => {
-  if (window.store) {
-    console.log('In Login, store is', window.store)
-  }
-  console.log('Login')
   return(`
     <div class="page-div">
       <div class="row">

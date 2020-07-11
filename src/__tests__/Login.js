@@ -1,12 +1,11 @@
 import Login from "../views/Login"
+import ROUTES from "../constants/routes"
 import { fireEvent, screen } from "@testing-library/dom"
-
 
 
 describe('Login Employee', () => {
 
   document.body.innerHTML = Login()
-  // si on remplit les deux champs et qu'ils sont au bon format, on est envoyé vers /bills et on est identifié en tant qu'employé
   test("Si l'employee remplit les deux champs et qu'ils sont au bon format, on est envoyé vers /bills et on est identifié en tant qu'employé", () => {
     
     const inputData = {
@@ -27,13 +26,8 @@ describe('Login Employee', () => {
     expect(inputPasswordUser.value).toBe(inputData.password)
 
     const formEmployee = screen.getByTestId("form-employee")
-    const handleSubmit = jest.fn(e => e.preventDefault())
-    formEmployee.addEventListener("submit", handleSubmit)
-    fireEvent.submit(formEmployee)
-    expect(handleSubmit).toHaveBeenCalledTimes(1)
-
-    // import handleSubmit
-    // test locaStorage
+    
+    // localStorage should be populated with form data
     Object.defineProperty(window, "localStorage", {
       value: {
         getItem: jest.fn(() => null),
@@ -42,9 +36,36 @@ describe('Login Employee', () => {
       writable: true
     })
 
-    
+    // we have to mock navigation to test it
+    const onNavigate = (pathname) => {
+      document.body.innerHTML = ROUTES[pathname]
+    }
 
-
+    const handleSubmit = jest.fn(e => {
+      window.localStorage.setItem("user", JSON.stringify({
+        type: "Employee",
+        email: inputEmailUser.value,
+        password: inputPasswordUser.value,
+        status: "connected"
+      }))
+      e.preventDefault()
+      onNavigate('/employe/note-de-frais')
+    })    
+    formEmployee.addEventListener("submit", handleSubmit)
+    fireEvent.submit(formEmployee)
+    expect(handleSubmit).toHaveBeenCalledTimes(1)
+    expect(window.localStorage.setItem).toHaveBeenCalledTimes(1)
+    expect(window.localStorage.setItem).toHaveBeenCalledWith(
+      "user",
+      JSON.stringify({
+        type: "Employee",
+        email: inputData.email,
+        password: inputData.password,
+        status: "connected"
+      })
+    )
+    // app should navigate to /employee/note-de-frais
+    expect(screen.getAllByText('Notes de Frais')).toBeTruthy()
   })
 
   // si champs empty on en change pas de page qiuand on login
