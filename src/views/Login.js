@@ -1,7 +1,8 @@
-export default (() => {
+export default () => {
   if (window.store) {
-    console.log('In Login, store is', window.store);
+    console.log('In Login, store is', window.store)
   }
+  console.log('Login')
   return(`
     <div class="page-div">
       <div class="row">
@@ -17,13 +18,13 @@ export default (() => {
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <form class="form-signin" id="form-employee">
+              <form class="form-signin" data-testid="form-employee">
                 <h2 class="h3 mb-3 font-weight-normal">Employé</h1>
                 <label for="inputEmail">Votre email</label>
-                <input type="email" id="inputEmailEmployee" class="form-control" placeholder="johndoe@email.com" required autofocus>
+                <input type="email" id="inputEmailEmployee" data-testid="employee-email-input" class="form-control" placeholder="johndoe@email.com" required autofocus>
                 <label for="inputPassword">Mot de passe</label>
-                <input type="password" id="inputPasswordEmployee" class="form-control" placeholder="******" required>
-                <button class="btn btn-lg btn-primary btn-block" style="background-color: #0E5AE5;" type="submit">Se connecter</button>
+                <input type="password" id="inputPasswordEmployee" data-testid="employee-password-input" class="form-control" placeholder="******" required>
+                <button class="btn btn-lg btn-primary btn-block" data-testid="employee-login-button" style="background-color: #0E5AE5;" type="submit">Se connecter</button>
               </form>
             </div>
           </div>
@@ -31,13 +32,13 @@ export default (() => {
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <form class="form-signin" id="form-admin">
+              <form class="form-signin" data-testid="form-admin">
                 <h2 class="h3 mb-3 font-weight-normal">Administration</h1>
                 <label for="inputEmail">Votre email</label>
-                <input type="email" id="inputEmailAdmin" class="form-control" placeholder="johndoe@email.com" required autofocus>
+                <input type="email" id="inputEmailAdmin" data-testid="admin-email-input" class="form-control" placeholder="johndoe@email.com" required autofocus>
                 <label for="inputPassword">Mot de passe</label>
-                <input type="password" id="inputPasswordAdmin" class="form-control" placeholder="******" required>
-                <button class="btn btn-lg btn-primary btn-block" style="background-color: #0E5AE5;" type="submit">Se connecter</button>
+                <input type="password" id="inputPasswordAdmin" data-testid="admin-password-input" class="form-control" placeholder="******" required>
+                <button class="btn btn-lg btn-primary btn-block" data-testid="admin-login-button" style="background-color: #0E5AE5;" type="submit">Se connecter</button>
               </form>
             </div>
           </div>
@@ -45,5 +46,5 @@ export default (() => {
       </div>
     </div>
   `)
-})()
+}
   
