@@ -1,5 +1,29 @@
 import ROUTES  from "./constants/routes.js"
 
+export const handleSubmitEmployee =  e => {
+  localStorage.setItem("user", JSON.stringify({
+    type: "Employee",
+    email: document.querySelector(`input[data-testid="employee-email-input"]`).value,
+    password: document.querySelector(`input[data-testid="employee-password-input"]`).value,
+    status: "connected"
+  }))
+  e.preventDefault()
+  onNavigate('/employe/note-de-frais')
+  document.body.style.backgroundColor="#fff"
+}
+
+export const handleSubmitAdmin = e => {
+  localStorage.setItem("user", JSON.stringify({
+    type: "Admin",
+    email: document.querySelector(`input[data-testid="employee-email-input"]`).value,
+    password: document.querySelector(`input[data-testid="employee-password-input"]`).value,
+    status: "connected"
+  }))
+  e.preventDefault()
+  onNavigate('/admin/dashboard')
+  document.body.style.backgroundColor="#fff"
+}
+
 export default () => {
   console.log('App')
   const rootDiv = document.getElementById('root')
@@ -22,32 +46,12 @@ export default () => {
     document.body.style.backgroundColor="#0E5AE5"
   }
   
-  const formEmployee = document.getElementById("form-employee")
-  const formAdmin = document.getElementById("form-admin")
+  const formEmployee = document.querySelector(`form[data-testid="form-employee"]`)
+
+  formEmployee.addEventListener("submit", handleSubmitEmployee)
   
-  formEmployee.addEventListener("submit", e => {
-      localStorage.setItem("user", JSON.stringify({
-        type: "Employee",
-        email: document.getElementById('inputEmailEmployee').value,
-        password: document.getElementById('inputPasswordEmployee').value,
-        status: "connected"
-      }))
-      e.preventDefault()
-      onNavigate('/employe/note-de-frais')
-      document.body.style.backgroundColor="#fff"
-  })
-  
-  formAdmin.addEventListener("submit", e => {
-    localStorage.setItem("user", JSON.stringify({
-      type: "Admin",
-      email: document.getElementById('inputEmailEmployee').value,
-      password: document.getElementById('inputPasswordEmployee').value,
-      status: "connected"
-    }))
-    e.preventDefault()
-    onNavigate('/admin/dashboard')
-    document.body.style.backgroundColor="#fff"
-  })
+  const formAdmin = document.querySelector(`form[data-testid="form-admin"]`)
+  formAdmin.addEventListener("submit", handleSubmitAdmin)
 
   return rootDiv
 }
