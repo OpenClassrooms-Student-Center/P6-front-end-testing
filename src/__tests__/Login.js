@@ -1,4 +1,4 @@
-import Login from "../views/Login"
+import Login from "../views/LoginUI"
 import ROUTES from "../constants/routes"
 import { fireEvent, screen } from "@testing-library/dom"
 
