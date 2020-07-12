@@ -101,9 +101,9 @@ describe('Login Employee', () => {
     })  
 
     test("Il navigue vers /note-de-frais", () => {
-      expect(screen.getAllByText('Notes de Frais')).toBeTruthy()
+      expect(screen.getAllByText('Mes notes de Frais')).toBeTruthy()
     })
-  
+
   })
 })
 
@@ -185,8 +185,11 @@ describe('Login Admin', () => {
     const handleSubmit = jest.fn(e => {
       window.localStorage.setItem("user", JSON.stringify({
         type: "Admin",
-        email: document.querySelector(`input[data-testid="employee-email-input"]`).value,
-        password: document.querySelector(`input[data-testid="employee-password-input"]`).value,        status: "connected"
+        // email: document.querySelector(`input[data-testid="employee-email-input"]`).value,
+        // password: document.querySelector(`input[data-testid="employee-password-input"]`).value,
+        email: document.querySelector(`input[data-testid="admin-email-input"]`).value,
+        password: document.querySelector(`input[data-testid="admin-password-input"]`).value,
+        status: "connected"
       }))
       e.preventDefault()
       onNavigate('/admin/dashboard')

@@ -5,7 +5,8 @@ import DashboardUI from "../views/DashboardUI.js"
 import DashboardSelectedUI from "../views/DashboardSelectedUI.js"
 
 export default {
-  '/' : LoginUI(),
+  '/' : BillsUI(),
+  // '/' : LoginUI(),
   '/employe/note-de-frais' : BillsUI(),
   '/employe/note-de-frais/nouvelle' : NewBillUI(),
   '/admin/dashboard' : DashboardUI(),
