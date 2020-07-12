@@ -1,3 +1,5 @@
+
+import { ROUTES_PATH } from '../constants/routes.js'
 export let PREVIOUS_LOCATION = ''
 
 // we use a class so as to test its methods in e2e tests
@@ -20,8 +22,8 @@ export default class Login {
       status: "connected"
     }))
     e.preventDefault()
-    this.onNavigate('/employe/note-de-frais')
-    this.PREVIOUS_LOCATION='/employe/note-de-frais'
+    this.onNavigate(ROUTES_PATH['Bills'])
+    this.PREVIOUS_LOCATION = ROUTES_PATH['Bills']
     PREVIOUS_LOCATION = this.PREVIOUS_LOCATION
     this.document.body.style.backgroundColor="#fff"
   }
@@ -34,8 +36,8 @@ export default class Login {
       status: "connected"
     }))
     e.preventDefault()
-    this.onNavigate('/admin/dashboard')
-    this.PREVIOUS_LOCATION='/admin/note-de-frais'
+    this.onNavigate(ROUTES_PATH['Dashboard'])
+    this.PREVIOUS_LOCATION = ROUTES_PATH['Dashboard']
     PREVIOUS_LOCATION = this.PREVIOUS_LOCATION
     document.body.style.backgroundColor="#fff"
   }

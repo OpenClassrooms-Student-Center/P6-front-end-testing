@@ -1,5 +1,6 @@
 import { ROUTES, ROUTES_PATH } from "./constants/routes.js"
 import { PREVIOUS_LOCATION } from "./containers/Login.js"
+import Bills from "./containers/Bills.js"
 
 export default () => {
   const rootDiv = document.getElementById('root')
@@ -15,21 +16,22 @@ export default () => {
     )
     rootDiv.innerHTML = ROUTES[pathname]
     if (pathname === ROUTES_PATH['Bills']) {
+      new Bills({ document, onNavigate })
       const divIcon1 = document.getElementById('layout-icon1')
       const divIcon2 = document.getElementById('layout-icon2')
       divIcon1.classList.add('active-icon')
       divIcon2.classList.remove('active-icon')
     } else if (pathname === ROUTES_PATH['NewBill']) {
-      const divIcon1 = document.getElementById('layout-icon1')
-      const divIcon2 = document.getElementById('layout-icon2')
-      divIcon1.classList.remove('active-icon')
-      divIcon2.classList.add('active-icon')
+      // const divIcon1 = document.getElementById('layout-icon1')
+      // const divIcon2 = document.getElementById('layout-icon2')
+      // divIcon1.classList.remove('active-icon')
+      // divIcon2.classList.add('active-icon')
+      console.log('NewBill')
     }
   }
   
   window.onpopstate = (e) => {
     const user = JSON.parse(localStorage.getItem('user'))
-
     if (window.location.pathname === "/" && !user) {
       document.body.style.backgroundColor="#0E5AE5"
       rootDiv.innerHTML = ROUTES[window.location.pathname]
