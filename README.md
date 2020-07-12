@@ -1,4 +1,4 @@
-**How to run the App locally**:
+**How to run the App localy**:
 
 *clone the project*
 `$ git clone https://github.com/OpenClassrooms-Student-Center/P6-front-end-testing.git`
