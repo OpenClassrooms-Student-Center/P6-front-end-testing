@@ -10,6 +10,7 @@ export default () => {
       status: "connected"
     }))
     e.preventDefault()
+    // onNavigate in attached to window in ./Router.js
     onNavigate('/employe/note-de-frais')
     PREVIOUS_LOCATION='/employe/note-de-frais'
     document.body.style.backgroundColor="#fff"
@@ -23,15 +24,16 @@ export default () => {
       status: "connected"
     }))
     e.preventDefault()
+    // onNavigate in attached to window in ./Router.js
     onNavigate('/admin/dashboard')
     PREVIOUS_LOCATION='/admin/dashboard'
     document.body.style.backgroundColor="#fff"
   }
   
-  const formEmployee = window.document.querySelector(`form[data-testid="form-employee"]`)
+  const formEmployee = document.querySelector(`form[data-testid="form-employee"]`)
   formEmployee.addEventListener("submit", handleSubmitEmployee)
   
-  const formAdmin = window.document.querySelector(`form[data-testid="form-admin"]`)
+  const formAdmin = document.querySelector(`form[data-testid="form-admin"]`)
   formAdmin.addEventListener("submit", handleSubmitAdmin)
 
   return null
