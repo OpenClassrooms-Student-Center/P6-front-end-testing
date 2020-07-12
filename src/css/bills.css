@@ -37,3 +37,16 @@
   line-height: 26px;
   letter-spacing: 0.2px;
 }
+
+#data-table {
+  margin-top: 20px;
+}
+
+.icon-actions {
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: justify;
+  justify-content: space-around;
+  align-items: center;
+}
