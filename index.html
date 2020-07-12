@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="src/css/login.css">
+    <link rel="stylesheet" href="src/css/layout.css">
     <link rel="stylesheet" href="src/css/bills.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -32,8 +33,9 @@
     <script type="module">
       import Router from "./src/Router.js"
       import Login from "./src/containers/Login.js"
-      Router()
-      Login()
+      
+      const rootDiv = Router()
+      Login(rootDiv)
     </script>
 
     <!-- Optional JavaScript -->

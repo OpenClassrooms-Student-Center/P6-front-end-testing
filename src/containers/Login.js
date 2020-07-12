@@ -1,4 +1,3 @@
-
 export let PREVIOUS_LOCATION = ''
 
 export default () => {
