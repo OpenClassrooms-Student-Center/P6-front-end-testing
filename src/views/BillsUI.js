@@ -9,7 +9,10 @@ export default () => {
     <div class='layout'>
       ${VerticalLayout()}
       <div class='content'>
-        <h1> Mes notes de Frais </h1>
+        <div class='content-header'>
+          <div class='content-title'> Mes notes de Frais </div>
+          <button type="button" id='btn-new-bill' class="btn btn-primary">Nouvelle note de frais</button>
+        </div>
       </div>
     </div>`
   )

@@ -1,3 +1,39 @@
 .content {
-  /* width: 90%; */
+  width: 100%;
+  margin-top: 76px; 
+  margin-left: 76px; 
+  margin-right: 76px; 
+}
+
+.content-header {
+  width: 100%; 
+  display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-title{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+#btn-new-bill {
+  width: 350px;
+  height: 36px;
+  background-color: #0E5AE5;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0.2px;
 }

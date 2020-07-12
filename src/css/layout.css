@@ -36,6 +36,7 @@
   position: relative;
   text-align: center;
   top: 80vh;
+  cursor: pointer;
 }
 
 .active-icon {
