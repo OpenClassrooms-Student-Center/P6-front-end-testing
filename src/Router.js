@@ -38,9 +38,9 @@ export default () => {
     }
   }
 
-  // if (window.location.pathname === "/") {
-  //   document.body.style.backgroundColor="#0E5AE5"
-  // }
+  if (window.location.pathname === "/") {
+    document.body.style.backgroundColor="#0E5AE5"
+  }
 
   return rootDiv
 }

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="src/css/login.css">
     <link rel="stylesheet" href="src/css/layout.css">
     <link rel="stylesheet" href="src/css/bills.css">
+    <link rel="stylesheet" href="src/css/actions.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Material-ui -->
@@ -32,10 +33,11 @@
     <div id="root"></div>
     <script type="module">
       import Router from "./src/Router.js"
-      import Login from "./src/containers/Login.js"
-      
+      import Login, { PREVIOUS_LOCATION } from "./src/containers/Login.js"
+
       const rootDiv = Router()
-      Login()
+      console.log('In index.html, document, localStorage, onNavigate', document, localStorage, onNavigate)
+      new Login({ document, localStorage, onNavigate, PREVIOUS_LOCATION })
     </script>
 
     <!-- Optional JavaScript -->

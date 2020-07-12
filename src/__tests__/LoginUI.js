@@ -1,4 +1,5 @@
-import Login from "../views/LoginUI"
+import LoginUI from "../views/LoginUI"
+import Login from '../containers/Login.js'
 import { ROUTES } from "../constants/routes"
 import { fireEvent, screen } from "@testing-library/dom"
 
@@ -6,7 +7,7 @@ import { fireEvent, screen } from "@testing-library/dom"
 describe('Login Employee', () => {
   describe("Si l'employee ne remplit pas les champs et clique sur le bouton se connecter", () => {
     test("Il reste sur la page Login", () => {
-      document.body.innerHTML = Login()
+      document.body.innerHTML = LoginUI()
 
       const inputEmailUser = screen.getByTestId("employee-email-input")
       expect(inputEmailUser.value).toBe("")
@@ -25,7 +26,7 @@ describe('Login Employee', () => {
 
   describe("Si l'employee remplit les champs au mauvais format et clique sur le bouton se connecter", () => {
     test("Il reste sur la page Login", () => {
-      document.body.innerHTML = Login()
+      document.body.innerHTML = LoginUI()
 
       const inputEmailUser = screen.getByTestId("employee-email-input")
       fireEvent.change(inputEmailUser, { target: { value: "pasunemail" } })
@@ -46,7 +47,7 @@ describe('Login Employee', () => {
 
   describe("Si l'employee remplit les deux champs du Login Employee au bon format et clique sur le bouton se connecter", () => {
     test("Il est identifié en tant qu'employé", () => {
-      document.body.innerHTML = Login()
+      document.body.innerHTML = LoginUI()
     const inputData = {
       email: "johndoe@email.com",
       password: "azerty"
@@ -76,19 +77,20 @@ describe('Login Employee', () => {
       document.body.innerHTML = ROUTES[pathname]
     }
 
-    const handleSubmit = jest.fn(e => {
-      window.localStorage.setItem("user", JSON.stringify({
-        type: "Employee",
-        email: document.querySelector(`input[data-testid="employee-email-input"]`).value,
-        password: document.querySelector(`input[data-testid="employee-password-input"]`).value,        status: "connected"
-      }))
-      e.preventDefault()
-      onNavigate('/employe/note-de-frais')
-    })    
+    let PREVIOUS_LOCATION = ''
+
+    const login = new Login({
+      document,
+      localStorage: window.localStorage,
+      onNavigate,
+      PREVIOUS_LOCATION
+    })
+
+    const handleSubmit = jest.fn(login.handleSubmitEmployee)    
     form.addEventListener("submit", handleSubmit)
     fireEvent.submit(form)
-      expect(handleSubmit).toHaveBeenCalledTimes(1)
-      expect(window.localStorage.setItem).toHaveBeenCalledTimes(1)
+      expect(handleSubmit).toHaveBeenCalled()
+      expect(window.localStorage.setItem).toHaveBeenCalled()
       expect(window.localStorage.setItem).toHaveBeenCalledWith(
         "user",
         JSON.stringify({
@@ -110,7 +112,7 @@ describe('Login Employee', () => {
 describe('Login Admin', () => {
   describe("Si l'admin ne remplit pas les champs et clique sur le bouton se connecter", () => {
     test("Il reste sur la page Login", () => {
-      document.body.innerHTML = Login()
+      document.body.innerHTML = LoginUI()
 
       const inputEmailUser = screen.getByTestId("admin-email-input")
       expect(inputEmailUser.value).toBe("")
@@ -129,7 +131,7 @@ describe('Login Admin', () => {
 
   describe("Si l'admin remplit les champs au mauvais format et clique sur le bouton se connecter", () => {
     test("Il reste sur la page Login", () => {
-      document.body.innerHTML = Login()
+      document.body.innerHTML = LoginUI()
 
       const inputEmailUser = screen.getByTestId("admin-email-input")
       fireEvent.change(inputEmailUser, { target: { value: "pasunemail" } })
@@ -150,7 +152,7 @@ describe('Login Admin', () => {
 
   describe("Si l'admin remplit les deux champs du Login admin au bon format et clique sur le bouton se connecter", () => {
     test("Il est identifié en tant qu'admin", () => {
-      document.body.innerHTML = Login()
+      document.body.innerHTML = LoginUI()
     const inputData = {
       type: "Admin",
       email: "johndoe@email.com",
@@ -182,22 +184,21 @@ describe('Login Admin', () => {
       document.body.innerHTML = ROUTES[pathname]
     }
 
-    const handleSubmit = jest.fn(e => {
-      window.localStorage.setItem("user", JSON.stringify({
-        type: "Admin",
-        // email: document.querySelector(`input[data-testid="employee-email-input"]`).value,
-        // password: document.querySelector(`input[data-testid="employee-password-input"]`).value,
-        email: document.querySelector(`input[data-testid="admin-email-input"]`).value,
-        password: document.querySelector(`input[data-testid="admin-password-input"]`).value,
-        status: "connected"
-      }))
-      e.preventDefault()
-      onNavigate('/admin/dashboard')
+    let PREVIOUS_LOCATION = ''
+
+    const login = new Login({
+      document,
+      localStorage: window.localStorage,
+      onNavigate,
+      PREVIOUS_LOCATION
     })
+
+    const handleSubmit = jest.fn(login.handleSubmitAdmin)    
+
     form.addEventListener("submit", handleSubmit)
     fireEvent.submit(form)
-      expect(handleSubmit).toHaveBeenCalledTimes(1)
-      expect(window.localStorage.setItem).toHaveBeenCalledTimes(1)
+      expect(handleSubmit).toHaveBeenCalled()
+      expect(window.localStorage.setItem).toHaveBeenCalled()
       expect(window.localStorage.setItem).toHaveBeenCalledWith(
         "user",
         JSON.stringify({

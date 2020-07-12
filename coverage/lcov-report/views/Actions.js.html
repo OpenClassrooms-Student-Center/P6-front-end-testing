@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for views/BillsUI.js</title>
+    <title>Code coverage report for views/Actions.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">views</a> BillsUI.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">views</a> Actions.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -100,15 +100,29 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -143,46 +157,95 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import VerticalLayout from './VerticalLayout.js'
-import Actions from './Actions.js'
-&nbsp;
-export default () =&gt; {
-  const user = localStorage.getItem("user")
-  console.log('Bills')
-  // console.log('user', user)
-&nbsp;
-  return (`
-    &lt;div class='layout'&gt;
-      ${VerticalLayout()}
-      &lt;div class='content'&gt;
-        &lt;div class='content-header'&gt;
-          &lt;div class='content-title'&gt; Mes notes de Frais &lt;/div&gt;
-          &lt;button type="button" id='btn-new-bill' class="btn btn-primary"&gt;Nouvelle note de frais&lt;/button&gt;
-        &lt;/div&gt;
-        &lt;div id='data-table'&gt;
-        &lt;table id="example" class="table table-striped table-bordered" style="width:100%"&gt;
-        &lt;thead&gt;
-            &lt;tr&gt;
-                &lt;th&gt;Type&lt;/th&gt;
-                &lt;th&gt;Nom&lt;/th&gt;
-                &lt;th&gt;Date&lt;/th&gt;
-                &lt;th&gt;Montant&lt;/th&gt;
-                &lt;th&gt;Statut&lt;/th&gt;
-                &lt;th&gt;Actions&lt;/th&gt;
-            &lt;/tr&gt;
-        &lt;/thead&gt;
-        &lt;tbody&gt;
-            &lt;tr&gt;
-                &lt;td&gt;Transport&lt;/td&gt;
-                &lt;td&gt;Avion Londres&lt;/td&gt;
-                &lt;td&gt;12 Janv 2020&lt;/td&gt;
-                &lt;td&gt;210 €&lt;/td&gt;
-                &lt;td&gt;En attente&lt;/td&gt;
-                &lt;td&gt;
-                  ${Actions()}
-                &lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/div&gt;
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default () =&gt; {
+  return (
+    `&lt;div class="icon-actions"&gt;
+      &lt;div id="icon-eye"&gt;
+      &lt;svg xmlns="http://www.w3.org/2000/svg"
+      width="0.21111in" height="0.21111in"
+      viewBox="0 0 469 469"&gt;
+   &lt;path id="Imported Path"
+         fill="#0E5AE5" stroke="#0E5AE5" stroke-width="1"
+         d="M 234.50,74.61
+            C 127.91,74.61 36.88,140.91 0.00,234.50
+              36.88,328.09 127.91,394.39 234.50,394.39
+              341.20,394.39 432.12,328.09 469.00,234.50
+              432.12,140.91 341.20,74.61 234.50,74.61 Z
+            M 234.50,341.09
+            C 175.66,341.09 127.91,293.34 127.91,234.50
+              127.91,175.66 175.66,127.91 234.50,127.91
+              293.34,127.91 341.09,175.66 341.09,234.50
+              341.09,293.34 293.34,341.09 234.50,341.09 Z
+            M 234.50,170.55
+            C 199.22,170.55 170.55,199.22 170.55,234.50
+              170.55,269.78 199.22,298.46 234.50,298.46
+              269.78,298.46 298.46,269.78 298.46,234.50
+              298.46,199.22 269.78,170.55 234.50,170.55 Z" /&gt;
+ &lt;/svg&gt;
+      &lt;/div&gt;
+      &lt;div id="icon-download"&gt;
+      &lt;svg xmlns="http://www.w3.org/2000/svg"
+      width="0.2in" height="0.2in"
+      viewBox="0 0 512 512"&gt;
+      &lt;path id="Imported Path"
+         fill="#0E5AE5" stroke="#0E5AE5" stroke-width="1"
+         d="M 432.00,352.00
+            C 432.00,352.00 432.00,448.00 432.00,448.00
+              432.00,448.00 80.00,448.00 80.00,448.00
+              80.00,448.00 80.00,352.00 80.00,352.00
+              80.00,352.00 16.00,352.00 16.00,352.00
+              16.00,352.00 16.00,480.00 16.00,480.00
+              16.00,497.70 30.34,512.00 48.00,512.00
+              48.00,512.00 464.00,512.00 464.00,512.00
+              481.70,512.00 496.00,497.70 496.00,480.00
+              496.00,480.00 496.00,352.00 496.00,352.00
+              496.00,352.00 432.00,352.00 432.00,352.00 Z
+            M 382.56,233.38
+            C 379.97,227.65 374.27,224.00 368.00,224.00
+              368.00,224.00 304.00,224.00 304.00,224.00
+              304.00,224.00 304.00,16.00 304.00,16.00
+              304.00,7.17 296.83,0.00 288.00,0.00
+              288.00,0.00 224.00,0.00 224.00,0.00
+              215.17,0.00 208.00,7.17 208.00,16.00
+              208.00,16.00 208.00,224.00 208.00,224.00
+              208.00,224.00 144.00,224.00 144.00,224.00
+              137.73,224.00 132.03,227.68 129.44,233.38
+              126.82,239.10 127.84,245.79 131.97,250.53
+              131.97,250.53 243.97,378.53 243.97,378.53
+              247.01,382.02 251.39,384.00 256.00,384.00
+              260.61,384.00 264.99,381.98 268.03,378.53
+              268.03,378.53 380.03,250.53 380.03,250.53
+              384.19,245.82 385.15,239.10 382.56,233.38 Z" /&gt;
+        &lt;/svg&gt;
+ 
       &lt;/div&gt;
     &lt;/div&gt;`
   )
