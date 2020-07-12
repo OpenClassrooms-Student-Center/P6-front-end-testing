@@ -1,6 +1,7 @@
 import { ROUTES, ROUTES_PATH } from "./constants/routes.js"
 import { PREVIOUS_LOCATION } from "./containers/Login.js"
 import Bills from "./containers/Bills.js"
+import NewBill from "./containers/NewBill.js"
 
 export default () => {
   const rootDiv = document.getElementById('root')
@@ -22,11 +23,11 @@ export default () => {
       divIcon1.classList.add('active-icon')
       divIcon2.classList.remove('active-icon')
     } else if (pathname === ROUTES_PATH['NewBill']) {
-      // const divIcon1 = document.getElementById('layout-icon1')
-      // const divIcon2 = document.getElementById('layout-icon2')
-      // divIcon1.classList.remove('active-icon')
-      // divIcon2.classList.add('active-icon')
-      console.log('NewBill')
+      new NewBill()
+      const divIcon1 = document.getElementById('layout-icon1')
+      const divIcon2 = document.getElementById('layout-icon2')
+      divIcon1.classList.remove('active-icon')
+      divIcon2.classList.add('active-icon')
     }
   }
   
@@ -44,6 +45,6 @@ export default () => {
     document.body.style.backgroundColor="#0E5AE5"
   }
 
-  return rootDiv
+  return null
 }
  

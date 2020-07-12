@@ -5,6 +5,14 @@
   margin-right: 76px; 
 }
 
+.content-inner {
+  margin-top: 20px;
+  border: solid 1px lightgrey;
+  border-radius: 5px;
+  padding: 50px;
+  min-height: 100vh;
+}
+
 .content-header {
   width: 100%; 
   display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
@@ -39,8 +47,8 @@
 }
 
 #data-table {
-  margin-top: 20px;
   text-align: center;
+  margin-top: 50px;
 }
 
 .icon-actions {

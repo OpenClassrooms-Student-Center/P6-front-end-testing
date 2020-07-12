@@ -12,17 +12,17 @@ export default () => {
         </div>
         <div id='data-table'>
         <table id="example" class="table table-striped table-bordered" style="width:100%">
-        <thead>
-            <tr>
-              <th>Type</th>
-              <th>Nom</th>
-              <th>Date</th>
-              <th>Montant</th>
-              <th>Statut</th>
-              <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+          <thead>
+              <tr>
+                <th>Type</th>
+                <th>Nom</th>
+                <th>Date</th>
+                <th>Montant</th>
+                <th>Statut</th>
+                <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody>
             <tr>
               <td>Transport</td>
               <td>Avion Londres</td>
@@ -33,6 +33,8 @@ export default () => {
                 ${Actions()}
               </td>
             </tr>
+          </tbody>
+          </table>
         </div>
       </div>
     </div>`

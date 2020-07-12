@@ -3,9 +3,7 @@
     "test": "jest --coverage"
   },
   "type": "module",
-  "dependencies": {
-    "@material-ui/icons": "^4.9.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/preset-env": "^7.10.4",
     "@testing-library/dom": "^7.20.0",

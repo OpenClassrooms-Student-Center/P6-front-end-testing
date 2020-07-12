@@ -1,6 +1,5 @@
 export default () => {
   return(`
-    <div  data-testid="login-page">
       <div class="page-div">
         <div class="row">
           <div class="title-container"> 
@@ -42,7 +41,6 @@ export default () => {
           </div>
         </div>
       </div>
-    </div>
   `)
 }
   

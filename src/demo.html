@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Workbench</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Datepicker.css -->
+        <link rel="stylesheet" href="datepicker.css">
+        
+        <!-- Datepicker.js -->
+        <script src="datepicker.js"></script>
+    </head>
+    <body style="text-align: center">
+        <input type="text" id="datepicker" onchange="console.log(d.getDate())" autocomplete="off"></input>
+        
+        <!-- Datepicker initialization -->
+        <script>
+            const d = new Datepicker(document.getElementById("datepicker"));
+            d.config({
+                firstdate: new Date(2019, 0, 9),
+                lastdate: new Date(2019, 5, 13),
+                disableddays: d => {return(d.getDay() > 0 && d.getDay() < 6)},
+                format: d => {return(months_short[d.getMonth()] + " " + d.getDate())}
+            });
+        </script>
+    </body>
+</html>

@@ -5,7 +5,7 @@ import DashboardUI from "../views/DashboardUI.js"
 import DashboardSelectedUI from "../views/DashboardSelectedUI.js"
 
 export const ROUTES = {
-  // '/' : BillsUI(),
+  // '/' : NewBillUI(),
   '/' : LoginUI(),
   '/employe/note-de-frais' : BillsUI(),
   '/employe/note-de-frais/nouvelle' : NewBillUI(),
