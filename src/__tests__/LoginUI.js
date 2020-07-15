@@ -90,11 +90,14 @@ describe('Login Employee', () => {
 
     let PREVIOUS_LOCATION = ''
 
+    const firebase = jest.fn()
+
     const login = new Login({
       document,
       localStorage: window.localStorage,
       onNavigate,
-      PREVIOUS_LOCATION
+      PREVIOUS_LOCATION,
+      firebase
     })
 
     const handleSubmit = jest.fn(login.handleSubmitEmployee)    
@@ -197,11 +200,16 @@ describe('Login Admin', () => {
 
     let PREVIOUS_LOCATION = ''
 
+    const firebase = jest.fn()
+
+    console.log("window.firebase", window.firebase)
+
     const login = new Login({
       document,
       localStorage: window.localStorage,
       onNavigate,
-      PREVIOUS_LOCATION
+      PREVIOUS_LOCATION,
+      firebase
     })
 
     const handleSubmit = jest.fn(login.handleSubmitAdmin)    

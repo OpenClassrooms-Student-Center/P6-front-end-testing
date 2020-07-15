@@ -1,15 +1,15 @@
 
 import { ROUTES_PATH } from '../constants/routes.js'
 export let PREVIOUS_LOCATION = ''
-import firestore from '../Firestore.js'
 
 // we use a class so as to test its methods in e2e tests
 export default class Login {
-  constructor({ document, localStorage, onNavigate, PREVIOUS_LOCATION }) {
+  constructor({ document, localStorage, onNavigate, PREVIOUS_LOCATION, firestore }) {
     this.document = document
     this.localStorage = localStorage
     this.onNavigate = onNavigate
     this.PREVIOUS_LOCATION = PREVIOUS_LOCATION
+    this.firestore = firestore
     const formEmployee = this.document.querySelector(`form[data-testid="form-employee"]`)
     formEmployee.addEventListener("submit", this.handleSubmitEmployee)
     const formAdmin = this.document.querySelector(`form[data-testid="form-admin"]`)
@@ -48,7 +48,8 @@ export default class Login {
   }
 
   checkIfUserExists = (user) => {
-    firestore
+    if (this.firestore) {
+      this.firestore
       .user(user.email)
       .get()
       .then((doc) => {
@@ -60,10 +61,15 @@ export default class Login {
         }
       })
       .catch(console.log)
+    } else {
+      return null
+    }
+
   }
 
   createUser = (user) => {
-    firestore
+    if (this.firestore) {
+      this.firestore
       .users()
       .doc(user.email)
       .set({
@@ -72,5 +78,8 @@ export default class Login {
       })
       .then(() => console.log(`User with ${user.email} is created`))
       .catch(console.log)
+    } else {
+      return null
+    }
   }
 } 

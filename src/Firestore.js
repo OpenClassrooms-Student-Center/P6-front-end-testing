@@ -1,7 +1,6 @@
 class Firestore {
   constructor() {
-    console.log('In Firestore, firebase', firebase)
-    this.store = firebase.firestore()
+    this.store = window.firebase.firestore()
   }
 
   user = uid => this.store.doc(`users/${uid}`)

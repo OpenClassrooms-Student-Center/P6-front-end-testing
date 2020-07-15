@@ -39,9 +39,10 @@
     <script src="src/external/datepicker.js"></script>
     <script type="module">
       import Router from "./src/Router.js"
+      import firestore from "./src/Firestore.js"
       import Login, { PREVIOUS_LOCATION } from "./src/containers/Login.js"
       Router()
-      new Login({ document, localStorage, onNavigate, PREVIOUS_LOCATION })
+      new Login({ document, localStorage, onNavigate, PREVIOUS_LOCATION, firestore })
     </script>
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
