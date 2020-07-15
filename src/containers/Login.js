@@ -1,6 +1,7 @@
 
 import { ROUTES_PATH } from '../constants/routes.js'
 export let PREVIOUS_LOCATION = ''
+import firestore from '../Firestore.js'
 
 // we use a class so as to test its methods in e2e tests
 export default class Login {
@@ -15,12 +16,16 @@ export default class Login {
     formAdmin.addEventListener("submit", this.handleSubmitAdmin)
   }
   handleSubmitEmployee = e => {
-    this.localStorage.setItem("user", JSON.stringify({
+    const user = {
       type: "Employee",
       email: e.target.querySelector(`input[data-testid="employee-email-input"]`).value,
       password: e.target.querySelector(`input[data-testid="employee-password-input"]`).value,
       status: "connected"
-    }))
+    }
+
+    this.localStorage.setItem("user", JSON.stringify(user))
+    const userExists = this.checkIfUserExists(user)
+    if (!userExists) this.createUser(user)
     e.preventDefault()
     this.onNavigate(ROUTES_PATH['Bills'])
     this.PREVIOUS_LOCATION = ROUTES_PATH['Bills']
@@ -40,5 +45,32 @@ export default class Login {
     this.PREVIOUS_LOCATION = ROUTES_PATH['Dashboard']
     PREVIOUS_LOCATION = this.PREVIOUS_LOCATION
     document.body.style.backgroundColor="#fff"
+  }
+
+  checkIfUserExists = (user) => {
+    firestore
+      .user(user.email)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          console.log(`User with ${user.email} exists`)
+          return true
+        } else {
+          return false
+        }
+      })
+      .catch(console.log)
+  }
+
+  createUser = (user) => {
+    firestore
+      .users()
+      .doc(user.email)
+      .set({
+        type: user.type,
+        name: user.email.split('@')[0] 
+      })
+      .then(() => console.log(`User with ${user.email} is created`))
+      .catch(console.log)
   }
 } 

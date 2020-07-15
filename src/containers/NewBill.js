@@ -13,16 +13,38 @@ export default class NewBill {
   }
   handleSubmit = e => {
     e.preventDefault()
-    console.log("firebase2", firebase)
+    const email = JSON.parse(localStorage.getItem("user")).email
+
+    const createBill = () => {
+      firestore
+        .bills()
+        .add({
+          test: 'coucou',
+          email: email
+        })
+        .then(() => {
+          this.onNavigate(ROUTES_PATH['Bills'])
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
+
+    // find user, if it does not exist create it
+    // add a user field in bills
+
     firestore
-      .bills()
-      .add({
-        test: 'coucou'
-      })
-      .then(() => {
-        this.onNavigate(ROUTES_PATH['Bills'])
-      })
-      .catch(error => {
+      .user(email)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          createBill()
+        } else {
+          console.log(`Firebase error: document with id ${email} not found`)
+          createUser()
+          createBill()
+        }
+      }).catch(error => {
         console.log(error)
       })
   }
