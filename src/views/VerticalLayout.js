@@ -1,7 +1,7 @@
 export default () => {
 
   const user = JSON.parse(localStorage.getItem('user'))
-
+  console.log('user', user)
   if (user && user.type === 'Employee') {
     return (
       `

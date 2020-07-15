@@ -2,7 +2,6 @@ import VerticalLayout from './VerticalLayout.js'
 
 export default () => {
 
-
   return (`
     <div class='layout'>
       ${VerticalLayout()}
@@ -11,7 +10,7 @@ export default () => {
           <div class='content-title'> Envoyer une note de frais </div>
         </div>
         <div class="form-newbill-container content-inner">
-          <form>
+          <form data-testid="form-new-bill">
             <div class="row">
                 <div class="col-md-6">
                   <div class="col-half">
@@ -63,7 +62,7 @@ export default () => {
             <div class="row">
               <div class="col-md-6">
                 <div class="col-half">
-                  <button type="button" id='btn-send-bill' class="btn btn-primary">Envoyer</button>
+                  <button type="submit" id='btn-send-bill' class="btn btn-primary">Envoyer</button>
                 </div>
               </div>
             </div>
