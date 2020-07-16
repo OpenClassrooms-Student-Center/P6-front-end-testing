@@ -47,6 +47,21 @@ export default (bills) => {
           </table>
         </div>
       </div>
+      <div class="modal fade" id="modaleFile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Justificatif</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img src="https://firebasestorage.googleapis.com/v0/b/billable-677b6.appspot.com/o/justificatifs%2Fpreview-facture-free-201801-pdf-1.jpg?alt=media&token=5f9e9bc5-b23a-4595-a13f-d2084a3934c0" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>`
   )
 }

@@ -39,6 +39,7 @@ export default class Bills {
 
   handleClickIconEye = (e, index) => {
     console.log(index)
+    $('#modaleFile').modal('show')
   }
 
   handleClickIconDownload = (e, index) => {
