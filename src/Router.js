@@ -1,6 +1,6 @@
 import { ROUTES, ROUTES_PATH } from "./constants/routes.js"
 import { PREVIOUS_LOCATION } from "./containers/Login.js"
-import Bills from "./containers/Bills.js"
+import Bills  from "./containers/Bills.js"
 import NewBill from "./containers/NewBill.js"
 import firestore from "./Firestore.js"
 import BillsUI from "./views/BillsUI.js"
@@ -23,14 +23,14 @@ export default () => {
       const divIcon2 = document.getElementById('layout-icon2')
       divIcon1.classList.add('active-icon')
       divIcon2.classList.remove('active-icon')
-      const bills = new Bills({ document, onNavigate, firestore, callNumber: 1 })
+      const bills = new Bills({ document, onNavigate, firestore  })
       bills.getBills().then(data => {
         rootDiv.innerHTML = BillsUI(data)
         const divIcon1 = document.getElementById('layout-icon1')
         const divIcon2 = document.getElementById('layout-icon2')
         divIcon1.classList.add('active-icon')
         divIcon2.classList.remove('active-icon')
-        new Bills({ document, onNavigate, firestore, callNumber: 2 })
+        new Bills({ document, onNavigate, firestore })
       })
 
     } else if (pathname === ROUTES_PATH['NewBill']) {

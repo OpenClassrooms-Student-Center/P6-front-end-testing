@@ -28,22 +28,24 @@ export default class Bills {
     const buttonNewBill = document.querySelector(`button[data-testid="btn-new-bill"]`)
     buttonNewBill.addEventListener('click', this.handleClickNewBill)
     const iconEye = document.querySelectorAll(`div[data-testid="icon-eye"]`)
-    if (iconEye) iconEye.forEach((icon, index) => icon.addEventListener('click', (e) => this.handleClickIconEye(e, index)))
+    if (iconEye) iconEye.forEach((icon, index) => icon.addEventListener('click', (e) => this.handleClickIconEye(index, alert)))
     const iconDownload = document.querySelectorAll(`div[data-testid="icon-download"]`)
-    if (iconDownload) iconDownload.forEach((icon, index) => icon.addEventListener('click', (e) => this.handleClickIconDownload(e, index)))
+    if (iconDownload) iconDownload.forEach((icon, index) => icon.addEventListener('click', (e) => this.handleClickIconDownload(e)))
+    this.bills = []
   }
 
   handleClickNewBill = e => {
     this.onNavigate(ROUTES_PATH['NewBill'])
   }
 
-  handleClickIconEye = (e, index) => {
-    console.log(index)
+  handleClickIconEye = (index, getIndex) => {
     $('#modaleFile').modal('show')
+    getIndex(index)
   }
 
   handleClickIconDownload = (e, index) => {
     console.log(index)
+    return index
   }
 
   getBills = () => {
@@ -53,15 +55,17 @@ export default class Bills {
     return this.firestore
       .bills()
       .get()
-      .then(snapshot =>
-        snapshot.docs
-          .map(doc => ({
-            ...doc.data(),
-            date: formatDate(doc.data().date),
-            status: formatStatus(doc.data().status)
-          }))
-          .filter(bill => bill.email === userEmail)
-      )
+      .then(snapshot => {
+        const bills = snapshot.docs
+        .map(doc => ({
+          ...doc.data(),
+          date: formatDate(doc.data().date),
+          status: formatStatus(doc.data().status)
+        }))
+        .filter(bill => bill.email === userEmail)
+        this.bills = bills
+        return bills
+      })
       .catch(console.log)
   }
 }

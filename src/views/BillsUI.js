@@ -2,7 +2,6 @@ import VerticalLayout from './VerticalLayout.js'
 import Actions from './Actions.js'
 
 export default (bills) => {
-
   const row = (bill) => {
     return (`
       <tr>
@@ -16,10 +15,29 @@ export default (bills) => {
         </td>
       </tr>
       `)
+    }
+
+  const rows = (data) => {
+    return (data && data.length) ? data.map(bill => row(bill)).join("") : ""
   }
-  const rows = (bills) => {
-    return (bills && bills.length) ? bills.map(bill => row(bill)) : []
-  }
+
+  const modal = (data, index) => (`
+    <div class="modal fade" id="modaleFile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Justificatif</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="${bills && bills.length ? bills[index].justificatifs : ""}" />
+          </div>
+        </div>
+      </div>
+    </div>
+  `)
 
   return (`
     <div class='layout'>
@@ -29,7 +47,7 @@ export default (bills) => {
           <div class='content-title'> Mes notes de frais </div>
           <button type="button" data-testid='btn-new-bill' class="btn btn-primary">Nouvelle note de frais</button>
         </div>
-        <div id='data-table'>
+        <div id="data-table">
         <table id="example" class="table table-striped" style="width:100%">
           <thead>
               <tr>
@@ -47,21 +65,7 @@ export default (bills) => {
           </table>
         </div>
       </div>
-      <div class="modal fade" id="modaleFile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Justificatif</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <img src="https://firebasestorage.googleapis.com/v0/b/billable-677b6.appspot.com/o/justificatifs%2Fpreview-facture-free-201801-pdf-1.jpg?alt=media&token=5f9e9bc5-b23a-4595-a13f-d2084a3934c0" />
-            </div>
-          </div>
-        </div>
-      </div>
+      ${modal(bills, 0)}
     </div>`
   )
 }
