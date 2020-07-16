@@ -21,7 +21,8 @@ export default (bills) => {
     return (data && data.length) ? data.map(bill => row(bill)).join("") : ""
   }
 
-  const modal = (data, index) => (`
+
+  const modal = () => (`
     <div class="modal fade" id="modaleFile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
@@ -32,7 +33,6 @@ export default (bills) => {
             </button>
           </div>
           <div class="modal-body">
-            <img src="${bills && bills.length ? bills[index].justificatifs : ""}" />
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@ export default (bills) => {
           </table>
         </div>
       </div>
-      ${modal(bills, 0)}
+      ${modal()}
     </div>`
   )
 }
