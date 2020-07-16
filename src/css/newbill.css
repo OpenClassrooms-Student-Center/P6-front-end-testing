@@ -36,7 +36,6 @@
 
 #btn-send-bill {
   width: 100px;
-  /* height: 36px; */
   background-color: #0E5AE5;
   font-family: Roboto;
   font-style: normal;
@@ -45,5 +44,18 @@
   line-height: 26px;
   letter-spacing: 0.2px;
   margin-top: 50px;
-  /* position: fixed; */
+}
+
+textarea, input, select {
+  color: #0E5AE5 !important;
+  opacity: 0.7 !important;
+}
+
+textarea:focus, input:focus, select:focus {
+  color: #0E5AE5 !important;
+  opacity: 1 !important;
+}
+
+*[placeholder] {
+  color: #0E5AE5 !important;
 }

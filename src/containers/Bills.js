@@ -11,12 +11,12 @@ export default class Bills {
   }
 
   handleClick = e => {
-    console.log("ROUTES_PATH['NewBill']", ROUTES_PATH['NewBill'])
     this.onNavigate(ROUTES_PATH['NewBill'])
   }
 
   getBills = () => {
-    const userEmail = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).email : ""
+    const userEmail = localStorage.getItem('user') ?
+      JSON.parse(localStorage.getItem('user')).email : ""
     console.log('getBills userEmail', userEmail)
     return this.firestore
       .bills()

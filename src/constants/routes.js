@@ -5,8 +5,8 @@ import DashboardUI from "../views/DashboardUI.js"
 
 export const ROUTES_PATH = {
   Login: '/',
-  Bills: '/employe/note-de-frais',
-  NewBill : '/employe/note-de-frais/nouvelle',
+  Bills: '/employee/bills',
+  NewBill : '/employee/bill/new',
   Dashboard: '/admin/dashboard'
 }
 
