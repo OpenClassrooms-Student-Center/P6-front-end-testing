@@ -52,7 +52,6 @@
   border: 2px solid #F3F5FA;
   box-sizing: border-box;
   border-radius: 10px;
-  padding-top: 16px;
   padding-bottom: 16px;
   height: 70vh;
 }
@@ -87,7 +86,6 @@ thead {
 }
 
 th, td {
-  padding: 20px !important;
   padding-left: 40px !important;
   padding-right: 40px !important;
 }
