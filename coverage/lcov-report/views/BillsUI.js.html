@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">66.67% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>4/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -113,25 +113,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -162,9 +162,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import VerticalLayout from './VerticalLayout.js'
 import Actions from './Actions.js'
 &nbsp;
-export default <span class="fstat-no" title="function not covered" >(b</span>ills) =&gt; {
+export default (bills) =&gt; {
 &nbsp;
-  const row = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(b</span>ill) =&gt; {</span>
+  const row = <span class="fstat-no" title="function not covered" >(b</span>ill) =&gt; {
 <span class="cstat-no" title="statement not covered" >    return (`</span>
       &lt;tr&gt;
         &lt;td&gt;${bill.type}&lt;/td&gt;
@@ -178,17 +178,17 @@ export default <span class="fstat-no" title="function not covered" >(b</span>ill
       &lt;/tr&gt;
       `)
   }
-  const rows = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(b</span>ills) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return bills &amp;&amp; bills.length &amp;&amp; bills.map(<span class="fstat-no" title="function not covered" >bi</span>ll =&gt; <span class="cstat-no" title="statement not covered" >row(bill))</span></span>
+  const rows = (bills) =&gt; {
+    return bills &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >bills.length </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >bills.map(<span class="fstat-no" title="function not covered" >bi</span>ll =&gt; <span class="cstat-no" title="statement not covered" >row(bill))</span></span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (`</span>
+  return (`
     &lt;div class='layout'&gt;
       ${VerticalLayout()}
       &lt;div class='content'&gt;
         &lt;div class='content-header'&gt;
           &lt;div class='content-title'&gt; Mes notes de frais &lt;/div&gt;
-          &lt;button type="button" id='btn-new-bill' class="btn btn-primary"&gt;Nouvelle note de frais&lt;/button&gt;
+          &lt;button type="button" data-testid='btn-new-bill' class="btn btn-primary"&gt;Nouvelle note de frais&lt;/button&gt;
         &lt;/div&gt;
         &lt;div id='data-table'&gt;
         &lt;table id="example" class="table table-striped table-bordered" style="width:100%"&gt;
@@ -217,7 +217,7 @@ export default <span class="fstat-no" title="function not covered" >(b</span>ill
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jul 16 2020 12:27:09 GMT+0200 (Central European Summer Time)
+                at Thu Jul 16 2020 12:36:50 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

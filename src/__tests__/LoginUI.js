@@ -85,7 +85,7 @@ describe('Login Employee', () => {
 
     // we have to mock navigation to test it
     const onNavigate = (pathname) => {
-      document.body.innerHTML = ROUTES[pathname]
+      document.body.innerHTML = ROUTES({ pathname })
     }
 
     let PREVIOUS_LOCATION = ''
@@ -195,7 +195,7 @@ describe('Login Admin', () => {
 
     // we have to mock navigation to test it
     const onNavigate = (pathname) => {
-      document.body.innerHTML = ROUTES[pathname]
+      document.body.innerHTML = ROUTES({ pathname })
     }
 
     let PREVIOUS_LOCATION = ''
