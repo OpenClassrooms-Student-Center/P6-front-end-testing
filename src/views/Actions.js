@@ -1,7 +1,7 @@
-export default () => {
+export default (billUrl) => {
   return (
     `<div class="icon-actions">
-      <div data-testid="icon-eye">
+      <div data-testid="icon-eye" data-bill-url=${billUrl}>
       <svg xmlns="http://www.w3.org/2000/svg"
       width="0.21111in" height="0.21111in"
       viewBox="0 0 469 469">

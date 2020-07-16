@@ -11,7 +11,7 @@ export default (bills) => {
         <td>${bill.amount} €</td>
         <td>${bill.status}</td>
         <td>
-          ${Actions()}
+          ${Actions(bill.justificatifs)}
         </td>
       </tr>
       `)

@@ -28,19 +28,24 @@ export default class Bills {
     const buttonNewBill = document.querySelector(`button[data-testid="btn-new-bill"]`)
     buttonNewBill.addEventListener('click', this.handleClickNewBill)
     const iconEye = document.querySelectorAll(`div[data-testid="icon-eye"]`)
-    if (iconEye) iconEye.forEach((icon, index) => icon.addEventListener('click', this.handleClickIconEye))
+    if (iconEye) iconEye.forEach((icon, index) => {
+      icon.addEventListener('click', (e) => this.handleClickIconEye(icon, index))
+    })
     const iconDownload = document.querySelectorAll(`div[data-testid="icon-download"]`)
     if (iconDownload) iconDownload.forEach((icon, index) => icon.addEventListener('click', this.handleClickIconDownload))
-    $('#modaleFile').on('show.bs.modal', function (event) {
-      $(this).find(".modal-body").html(`<img src=https://firebasestorage.googleapis.com/v0/b/billable-677b6.appspot.com/o/justificatifs%2Fpreview-facture-free-201801-pdf-1.jpg?alt=media&token=5f9e9bc5-b23a-4595-a13f-d2084a3934c0" />`)
-    })
+
   }
 
   handleClickNewBill = e => {
     this.onNavigate(ROUTES_PATH['NewBill'])
   }
 
-  handleClickIconEye = (index) => {
+  handleClickIconEye = (icon, index) => {
+    console.log(index)
+    console.log(icon)
+    const billUrl = icon.getAttribute("data-bill-url")
+    console.log(billUrl)
+    $('#modaleFile').find(".modal-body").html(`<img src=${billUrl} />`)
     $('#modaleFile').modal('show')
   }
 
