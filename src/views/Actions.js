@@ -1,7 +1,7 @@
 export default () => {
   return (
     `<div class="icon-actions">
-      <div id="icon-eye">
+      <div data-testid="icon-eye">
       <svg xmlns="http://www.w3.org/2000/svg"
       width="0.21111in" height="0.21111in"
       viewBox="0 0 469 469">
@@ -24,7 +24,7 @@ export default () => {
               298.46,199.22 269.78,170.55 234.50,170.55 Z" />
  </svg>
       </div>
-      <div id="icon-download">
+      <div data-testid="icon-download">
       <svg xmlns="http://www.w3.org/2000/svg"
       width="0.2in" height="0.2in"
       viewBox="0 0 512 512">

@@ -26,12 +26,23 @@ export default class Bills {
     this.onNavigate = onNavigate
     this.firestore = firestore
     const buttonNewBill = document.querySelector(`button[data-testid="btn-new-bill"]`)
-    buttonNewBill.addEventListener('click', this.handleClick)
-    console.log('buttonNewBill', buttonNewBill)
+    buttonNewBill.addEventListener('click', this.handleClickNewBill)
+    const iconEye = document.querySelectorAll(`div[data-testid="icon-eye"]`)
+    if (iconEye) iconEye.forEach((icon, index) => icon.addEventListener('click', (e) => this.handleClickIconEye(e, index)))
+    const iconDownload = document.querySelectorAll(`div[data-testid="icon-download"]`)
+    if (iconDownload) iconDownload.forEach((icon, index) => icon.addEventListener('click', (e) => this.handleClickIconDownload(e, index)))
   }
 
-  handleClick = e => {
+  handleClickNewBill = e => {
     this.onNavigate(ROUTES_PATH['NewBill'])
+  }
+
+  handleClickIconEye = (e, index) => {
+    console.log(index)
+  }
+
+  handleClickIconDownload = (e, index) => {
+    console.log(index)
   }
 
   getBills = () => {

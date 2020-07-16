@@ -3,7 +3,6 @@ import Actions from './Actions.js'
 
 export default (bills) => {
 
-
   const row = (bill) => {
     return (`
       <tr>
