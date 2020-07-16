@@ -18,7 +18,7 @@ export default (bills) => {
       `)
   }
   const rows = (bills) => {
-    return bills && bills.length && bills.map(bill => row(bill))
+    return (bills && bills.length) ? bills.map(bill => row(bill)) : []
   }
 
   return (`

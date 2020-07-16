@@ -18,28 +18,21 @@ export default () => {
       window.location.origin + pathname
     )
     if (pathname === ROUTES_PATH['Bills']) {
-      // const bills = new Bills({ document, onNavigate, firestore })
-      // const data = bills.getBills()
-      // rootDiv.innerHTML = ROUTES({ pathname, data })
-      const data = [{
-        amount: 1799,
-        commentary: "Appareil photo pour l'évènement Billable",
-        date: "2019-01-16",
-        email: "cedric.hiely@billable.com",
-        justificatifs: "https://firebasestorage.googleapis.com/v0/b/billable-677b6.appspot.com/o/justificatifs%2F1592770761.jpeg?alt=media&token=27677e56-5f10-4332-9059-b668d652a891",
-        name: "Appareil photo",
-        pct: 20,
-        status: "pending",
-        type: "IT et électronique",
-        vat: ""
-      }]
-      rootDiv.innerHTML = ROUTES({ pathname, data })
-      new Bills({ document, onNavigate, firestore })
-
+      rootDiv.innerHTML = ROUTES({ pathname })
       const divIcon1 = document.getElementById('layout-icon1')
       const divIcon2 = document.getElementById('layout-icon2')
       divIcon1.classList.add('active-icon')
       divIcon2.classList.remove('active-icon')
+      const bills = new Bills({ document, onNavigate, firestore })
+      bills.getBills().then(data => {
+        rootDiv.innerHTML = BillsUI(data)
+        const divIcon1 = document.getElementById('layout-icon1')
+        const divIcon2 = document.getElementById('layout-icon2')
+        divIcon1.classList.add('active-icon')
+        divIcon2.classList.remove('active-icon')
+        new Bills({ document, onNavigate, firestore })
+      })
+
     } else if (pathname === ROUTES_PATH['NewBill']) {
       rootDiv.innerHTML = ROUTES({ pathname })
       new NewBill({ document, onNavigate, firestore })

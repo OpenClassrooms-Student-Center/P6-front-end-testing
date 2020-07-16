@@ -6,9 +6,8 @@ export default class Bills {
     this.onNavigate = onNavigate
     this.firestore = firestore
     const buttonNewBill = document.querySelector(`button[data-testid="btn-new-bill"]`)
-    if (buttonNewBill) buttonNewBill.addEventListener('click', this.handleClick)
+    buttonNewBill.addEventListener('click', this.handleClick)
     console.log('buttonNewBill', buttonNewBill)
-    this.getBills()
   }
 
   handleClick = e => {
@@ -17,15 +16,16 @@ export default class Bills {
   }
 
   getBills = () => {
-    const bills = []
-    this.firestore
+    const userEmail = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).email : ""
+    console.log('getBills userEmail', userEmail)
+    return this.firestore
       .bills()
       .get()
-      .then(snapshot => {
-        snapshot.docs.forEach(doc => bills.push(doc.data()))
-        console.log("bills", bills)
-      })
+      .then(snapshot =>
+        snapshot.docs
+          .map(doc => doc.data())
+          .filter(bill => bill.email === userEmail)
+      )
       .catch(console.log)
-    return bills
   }
 }
