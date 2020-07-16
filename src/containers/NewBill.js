@@ -38,7 +38,8 @@ export default class NewBill {
       vat: e.target.querySelector(`input[data-testid="vat"]`).value,
       pct: parseInt(e.target.querySelector(`input[data-testid="pct"]`).value) || 20,
       commentary: e.target.querySelector(`textarea[data-testid="commentary"]`).value,
-      justificatifs: this.justificatifUrl
+      justificatifs: this.justificatifUrl,
+      status: 'pending'
     }
     this.createBill(bill)
     this.onNavigate(ROUTES_PATH['Bills'])

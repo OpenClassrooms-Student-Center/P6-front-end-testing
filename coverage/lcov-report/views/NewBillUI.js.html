@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -134,7 +134,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -205,9 +205,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import VerticalLayout from './VerticalLayout.js'
 &nbsp;
-export default () =&gt; {
+export default <span class="fstat-no" title="function not covered" >()</span> =&gt; {
 &nbsp;
-  return (`
+<span class="cstat-no" title="statement not covered" >  return (`</span>
     &lt;div class='layout'&gt;
       ${VerticalLayout()}
       &lt;div class='content'&gt;
@@ -220,7 +220,7 @@ export default () =&gt; {
                 &lt;div class="col-md-6"&gt;
                   &lt;div class="col-half"&gt;
                     &lt;label for="expense-type" class="bold-label"&gt;Type de dépense&lt;/label&gt;
-                      &lt;select class="form-control blue-border" id="expense-type" default="Transports"&gt;
+                      &lt;select required class="form-control blue-border" data-testid="expense-type" default="Transports"&gt;
                         &lt;option&gt;Transports&lt;/option&gt;
                         &lt;option&gt;Restaurants et bars&lt;/option&gt;
                         &lt;option&gt;Hôtel et logement&lt;/option&gt;
@@ -232,35 +232,35 @@ export default () =&gt; {
                   &lt;/div&gt;
                   &lt;div class="col-half"&gt;
                     &lt;label for="expense-name" class="bold-label"&gt;Nom de la dépense&lt;/label&gt;
-                    &lt;input type="text" class="form-control blue-border" id="expense-name" placeholder="Vol Paris Londres" /&gt;
+                    &lt;input type="text" class="form-control blue-border" data-testid="expense-name" placeholder="Vol Paris Londres" /&gt;
                   &lt;/div&gt;
                   &lt;div class="col-half"&gt;
                     &lt;label for="datepicker" class="bold-label"&gt;Date&lt;/label&gt;
-                    &lt;input type="date" class="form-control blue-border" id="datepicker" /&gt;
+                    &lt;input required type="date" class="form-control blue-border" data-testid="datepicker" /&gt;
                   &lt;/div&gt;
                   &lt;div class="col-half"&gt;
                     &lt;label for="amount" class="bold-label"&gt;Montant TTC &lt;/label&gt;
-                    &lt;input type="number" class="form-control blue-border" id="amount" placeholder="348" /&gt;
+                    &lt;input required type="number" class="form-control blue-border" data-testid="amount" placeholder="348" /&gt;
                   &lt;/div&gt;
                   &lt;div class="col-half-row"&gt;
                     &lt;div class="flex-col"&gt; 
                       &lt;label for="vat" class="bold-label"&gt;TVA&lt;/label&gt;
-                      &lt;input type="number" class="form-control blue-border" id="vat" placeholder="70" /&gt;
+                      &lt;input type="number" class="form-control blue-border" data-testid="vat" placeholder="70" /&gt;
                     &lt;/div&gt;
                     &lt;div class="flex-col"&gt;
                       &lt;label for="pct" class="white-text"&gt;%&lt;/label&gt;
-                      &lt;input type="number" class="form-control blue-border" id="pct" placeholder="20" /&gt;
+                      &lt;input required type="number" class="form-control blue-border" data-testid="pct" placeholder="20" /&gt;
                     &lt;/div&gt;
                   &lt;/div&gt;
                 &lt;/div&gt;
                 &lt;div class="col-md-6"&gt;
                   &lt;div class="col-half"&gt;
                     &lt;label for="commentary" class="bold-label"&gt;Commentaire&lt;/label&gt;
-                    &lt;textarea class="form-control blue-border" id="commentary" rows="3"&gt;&lt;/textarea&gt;
+                    &lt;textarea class="form-control blue-border" data-testid="commentary" rows="3"&gt;&lt;/textarea&gt;
                   &lt;/div&gt;
                   &lt;div class="col-half"&gt;
                     &lt;label for="file" class="bold-label"&gt;Justificatif&lt;/label&gt;
-                    &lt;input type="file" class="form-control blue-border" id="file" /&gt;
+                    &lt;input required type="file" class="form-control blue-border" data-testid="file" /&gt;
                   &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
@@ -283,7 +283,7 @@ export default () =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jul 15 2020 10:41:08 GMT+0200 (Central European Summer Time)
+                at Thu Jul 16 2020 12:27:09 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
