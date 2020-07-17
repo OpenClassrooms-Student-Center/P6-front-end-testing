@@ -28,30 +28,19 @@ export default class Bills {
     const buttonNewBill = document.querySelector(`button[data-testid="btn-new-bill"]`)
     buttonNewBill.addEventListener('click', this.handleClickNewBill)
     const iconEye = document.querySelectorAll(`div[data-testid="icon-eye"]`)
-    if (iconEye) iconEye.forEach((icon, index) => {
-      icon.addEventListener('click', (e) => this.handleClickIconEye(icon, index))
+    if (iconEye) iconEye.forEach(icon => {
+      icon.addEventListener('click', (e) => this.handleClickIconEye(icon))
     })
-    const iconDownload = document.querySelectorAll(`div[data-testid="icon-download"]`)
-    if (iconDownload) iconDownload.forEach((icon, index) => icon.addEventListener('click', this.handleClickIconDownload))
-
   }
 
   handleClickNewBill = e => {
     this.onNavigate(ROUTES_PATH['NewBill'])
   }
 
-  handleClickIconEye = (icon, index) => {
-    console.log(index)
-    console.log(icon)
+  handleClickIconEye = (icon) => {
     const billUrl = icon.getAttribute("data-bill-url")
-    console.log(billUrl)
     $('#modaleFile').find(".modal-body").html(`<img src=${billUrl} />`)
     $('#modaleFile').modal('show')
-  }
-
-  handleClickIconDownload = (e) => {
-    console.log(e)
-    // https://blog.logrocket.com/programmatic-file-downloads-in-the-browser-9a5186298d5c/
   }
 
   getBills = () => {
