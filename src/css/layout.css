@@ -4,9 +4,9 @@
 
 .vertical-navbar {
   width: 80px;
-  min-height: 100vh;
   background-color: #0E5AE5;
   color: #fff;
+  height: 150vh;
 }
 
 .layout-title {

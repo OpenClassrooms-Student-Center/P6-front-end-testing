@@ -1,11 +1,13 @@
 import calendarIcon from '../assets/svg/calendar.js'
 import euroIcon from '../assets/svg/euro.js'
 import pctIcon from '../assets/svg/pct.js'
+import eyeWhite from '../assets/svg/eye_white.js'
+import downloadWhite from '../assets/svg/download_white.js'
 
 export default () => {
   return (`
     <div class="container dashboard-form">
-      <div class="row" id="dashboard-row1">
+      <div class="row">
         <div class="col-sm" id="dashboard-form-col1">
           <label for="expense-type" class="bold-label">Type de dépense</label>
           <div class='input-field'> Avion </div>
@@ -22,7 +24,7 @@ export default () => {
           <div class='textarea-field' style="height: 300px;"> Voici la demande de remboursement de mon vol en direction de Londres </div>
         </div>
       </div>
-      <div class="row" id="dashboard-row2">
+      <div class="row">
         <div class="col-sm">
           <label for="amount" class="bold-label">Montant TTC </label>
           <div class='input-field input-flex'>
@@ -44,16 +46,30 @@ export default () => {
           </div>
         </div>
       </div>
-      <div class="row" id="dashboard-row3">
+      <div class="row">
         <div class="col-sm">
-          Row 3
+          <label for="file" class="bold-label">Justificatif</label>
+            <div class='input-field input-flex file-flex'>
+            <span>Ticket.jpeg</span>
+            <div class='icons-container'>
+              <span> ${eyeWhite} </span>
+              <span> ${downloadWhite} </span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row" id="dashboard-row4">
+      <div class="row">
         <div class="col-sm">
-          Row 4
+          <label for="commentary-admin" class="bold-label">Ajouter un commentaire</label>
+          <textarea class="form-control blue-border" data-testid="commentary2" rows="5"></textarea>
         </div>
       </div>
+      <div class="row">
+      <div class="col-sm buttons-flex" style="width: 300px;" >
+        <button type="submit" id='btn-refuse-bill' class="btn btn-primary">Refuser</button>
+        <button type="submit" id='btn-accept-bill' class="btn btn-primary">Accepter</button>
+      </div>
+    </div>
     </div>
   `)
 }
