@@ -4,10 +4,11 @@ import NewBillUI from "../views/NewBillUI.js"
 import DashboardUI from "../views/DashboardUI.js"
 
 export const ROUTES_PATH = {
-  Login: '/',
+  Dashboard: '/',
+  // Login: '/',
   Bills: '/employee/bills',
   NewBill : '/employee/bill/new',
-  Dashboard: '/admin/dashboard'
+  // Dashboard: '/admin/dashboard'
 }
 
 export const ROUTES = ({ pathname, data }) => {

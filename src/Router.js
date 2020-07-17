@@ -40,6 +40,8 @@ export default () => {
       const divIcon2 = document.getElementById('layout-icon2')
       divIcon1.classList.remove('active-icon')
       divIcon2.classList.add('active-icon')
+    } else if (pathname === ROUTES_PATH['Dashboard']) {
+      rootDiv.innerHTML = ROUTES({ pathname })
     }
   }
   
@@ -53,9 +55,9 @@ export default () => {
     }
   }
 
-  if (window.location.pathname === "/") {
-    document.body.style.backgroundColor="#0E5AE5"
-  } 
+  // if (window.location.pathname === "/") {
+  //   document.body.style.backgroundColor="#0E5AE5"
+  // } 
   return null
 }
  

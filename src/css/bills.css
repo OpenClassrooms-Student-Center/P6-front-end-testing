@@ -2,7 +2,7 @@
   width: 100%;
   margin-top: 76px; 
   margin-left: 76px; 
-  margin-right: 76px; 
+  margin-right: 76px;
 }
 
 .content-inner {
@@ -27,7 +27,6 @@
 }
 
 .content-title{
-  font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 48px;
@@ -38,7 +37,6 @@
   width: 350px;
   height: 36px;
   background-color: #0E5AE5;
-  font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.67% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/6</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>6/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">50% </span>
-                <span class="quiet">Functions</span>
+                <span class="quiet">Branches</span>
                 <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">60% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>3/5</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/5</span>
+                <span class='fraction'>5/6</span>
             </div>
         
             
@@ -108,8 +108,26 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -127,11 +145,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -163,7 +201,6 @@
 import Actions from './Actions.js'
 &nbsp;
 export default (bills) =&gt; {
-&nbsp;
   const row = <span class="fstat-no" title="function not covered" >(b</span>ill) =&gt; {
 <span class="cstat-no" title="statement not covered" >    return (`</span>
       &lt;tr&gt;
@@ -173,14 +210,33 @@ export default (bills) =&gt; {
         &lt;td&gt;${bill.amount} €&lt;/td&gt;
         &lt;td&gt;${bill.status}&lt;/td&gt;
         &lt;td&gt;
-          ${Actions()}
+          ${Actions(bill.justificatifs)}
         &lt;/td&gt;
       &lt;/tr&gt;
       `)
+    }
+&nbsp;
+  const rows = (data) =&gt; {
+    return (data &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >data.length)</span> ? <span class="branch-0 cbranch-no" title="branch not covered" >data.map(<span class="fstat-no" title="function not covered" >bi</span>ll =&gt; <span class="cstat-no" title="statement not covered" >row(bill))</span>.join("") </span>: ""
   }
-  const rows = (bills) =&gt; {
-    return bills &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >bills.length </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >bills.map(<span class="fstat-no" title="function not covered" >bi</span>ll =&gt; <span class="cstat-no" title="statement not covered" >row(bill))</span></span>
-  }
+&nbsp;
+&nbsp;
+  const modal = () =&gt; (`
+    &lt;div class="modal fade" id="modaleFile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"&gt;
+      &lt;div class="modal-dialog modal-dialog-centered modal-lg" role="document"&gt;
+        &lt;div class="modal-content"&gt;
+          &lt;div class="modal-header"&gt;
+            &lt;h5 class="modal-title" id="exampleModalLongTitle"&gt;Justificatif&lt;/h5&gt;
+            &lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+              &lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;
+            &lt;/button&gt;
+          &lt;/div&gt;
+          &lt;div class="modal-body"&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  `)
 &nbsp;
   return (`
     &lt;div class='layout'&gt;
@@ -190,8 +246,8 @@ export default (bills) =&gt; {
           &lt;div class='content-title'&gt; Mes notes de frais &lt;/div&gt;
           &lt;button type="button" data-testid='btn-new-bill' class="btn btn-primary"&gt;Nouvelle note de frais&lt;/button&gt;
         &lt;/div&gt;
-        &lt;div id='data-table'&gt;
-        &lt;table id="example" class="table table-striped table-bordered" style="width:100%"&gt;
+        &lt;div id="data-table"&gt;
+        &lt;table id="example" class="table table-striped" style="width:100%"&gt;
           &lt;thead&gt;
               &lt;tr&gt;
                 &lt;th&gt;Type&lt;/th&gt;
@@ -208,6 +264,7 @@ export default (bills) =&gt; {
           &lt;/table&gt;
         &lt;/div&gt;
       &lt;/div&gt;
+      ${modal()}
     &lt;/div&gt;`
   )
 }</pre></td></tr></table></pre>
@@ -217,7 +274,7 @@ export default (bills) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jul 16 2020 12:47:52 GMT+0200 (Central European Summer Time)
+                at Fri Jul 17 2020 09:15:09 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

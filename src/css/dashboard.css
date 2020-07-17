@@ -1,0 +1,63 @@
+.bills-feed {
+  width: 390px;
+  position: absolute;
+  left: 120px;
+  top: 52px;
+}
+
+.status-bills-container {
+
+
+}
+
+.status-bills-container h3 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.bill-card {
+  margin-top: 17px;
+  margin-bottom: 17px;
+  background: #0D5AE5;
+  border-radius: 8px;
+  padding: 17px;
+  color: #fff;
+  line-height: 25px;
+  letter-spacing: 0.2px;
+}
+
+.bill-card-name-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bill-card-name {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.bill-card-grey {
+  mix-blend-mode: normal;
+  opacity: 0.4;
+}
+
+.name-price-container {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-type-container {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  mix-blend-mode: normal;
+  opacity: 0.6;
+  display: flex;
+  justify-content: space-between;
+}
