@@ -12,13 +12,13 @@ export default () => {
       <div class='vertical-navbar'>
         <div class='layout-title'> Billable </div>
         <div id='layout-icon1'>
-          ${WindowIcon()}
+          ${WindowIcon}
         </div>
         <div id='layout-icon2'>
-          ${MailIcon()}
+          ${MailIcon}
         </div>
         <div id='layout-disconnect'>
-          ${DisconnectIcon()}
+          ${DisconnectIcon}
         </div>
     </div>
       `
@@ -29,7 +29,7 @@ export default () => {
       <div class='vertical-navbar'>
         <div class='layout-title'> Billable </div>
           <div id='layout-disconnect'>
-            ${DisconnectIcon()}
+            ${DisconnectIcon}
           </div>
         </div>
       `

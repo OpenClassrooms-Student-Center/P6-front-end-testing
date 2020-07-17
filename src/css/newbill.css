@@ -22,8 +22,11 @@
   border-radius: 5px;
 }
 
-.bold-label {
-  font-weight: bolder;
+label {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
 }
 
 .flex-col {
@@ -37,7 +40,6 @@
 #btn-send-bill {
   width: 100px;
   background-color: #0E5AE5;
-  font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
