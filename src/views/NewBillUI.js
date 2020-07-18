@@ -4,7 +4,7 @@ export default () => {
 
   return (`
     <div class='layout'>
-      ${VerticalLayout()}
+      ${VerticalLayout(190)}
       <div class='content'>
         <div class='content-header'>
           <div class='content-title'> Envoyer une note de frais </div>

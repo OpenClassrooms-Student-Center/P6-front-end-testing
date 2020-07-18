@@ -9,7 +9,7 @@ export default (height) => {
   if (user && user.type === 'Employee') {
     return (
       `
-      <div class='vertical-navbar'>
+      <div class='vertical-navbar' style='height: ${height}vh;'>
         <div class='layout-title'> Billable </div>
         <div id='layout-icon1'>
           ${WindowIcon}
