@@ -52,8 +52,8 @@ export default () => {
             <div class='input-field input-flex file-flex'>
             <span>Ticket.jpeg</span>
             <div class='icons-container'>
-              <span> ${eyeWhite} </span>
-              <span> ${downloadWhite} </span>
+              <span data-testid="icon-eye-d"> ${eyeWhite} </span>
+              <span data-testid="icon-download-d"> ${downloadWhite} </span>
             </div>
           </div>
         </div>

@@ -10,18 +10,18 @@ export const ROUTES_PATH = {
   Dashboard: '/admin/dashboard'
 }
 
-export const ROUTES = ({ pathname, data }) => {
+export const ROUTES = ({ pathname, data, error, loading }) => {
   switch (pathname) {
     case ROUTES_PATH['Login']:
-      return LoginUI()
+      return LoginUI({ data, error, loading })
     case ROUTES_PATH['Bills']:
-      return BillsUI(data)
+      return BillsUI({ data, error, loading })
     case ROUTES_PATH['NewBill']:
-      return NewBillUI()
+      return NewBillUI({ data, error, loading })
     case ROUTES_PATH['Dashboard']:
-      return DashboardUI()
+      return DashboardUI({ data, error, loading })
     default:
-      return LoginUI()
+      return LoginUI({ data, error, loading })
   }
 }
 

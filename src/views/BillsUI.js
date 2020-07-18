@@ -1,7 +1,10 @@
 import VerticalLayout from './VerticalLayout.js'
+import ErrorPage from "./ErrorPage.js"
+import LoadingPage from "./LoadingPage.js"
+
 import Actions from './Actions.js'
 
-export default (bills) => {
+export default ({ data: bills, loading, error }) => {
   const row = (bill) => {
     return (`
       <tr>
@@ -39,6 +42,12 @@ export default (bills) => {
     </div>
   `)
 
+  if (loading) {
+    return LoadingPage()
+  } else if (error) {
+    return ErrorPage()
+  }
+  
   return (`
     <div class='layout'>
       ${VerticalLayout()}

@@ -22,7 +22,6 @@ export default class Login {
       password: e.target.querySelector(`input[data-testid="employee-password-input"]`).value,
       status: "connected"
     }
-
     this.localStorage.setItem("user", JSON.stringify(user))
     const userExists = this.checkIfUserExists(user)
     if (!userExists) this.createUser(user)
@@ -34,12 +33,15 @@ export default class Login {
   }
 
   handleSubmitAdmin = e => {
-    localStorage.setItem("user", JSON.stringify({
+    const user = {
       type: "Admin",
       email: e.target.querySelector(`input[data-testid="admin-email-input"]`).value,
       password: e.target.querySelector(`input[data-testid="admin-password-input"]`).value,
       status: "connected"
-    }))
+    }
+    this.localStorage.setItem("user", JSON.stringify(user))
+    const userExists = this.checkIfUserExists(user)
+    if (!userExists) this.createUser(user)
     e.preventDefault()
     this.onNavigate(ROUTES_PATH['Dashboard'])
     this.PREVIOUS_LOCATION = ROUTES_PATH['Dashboard']
@@ -64,7 +66,6 @@ export default class Login {
     } else {
       return null
     }
-
   }
 
   createUser = (user) => {

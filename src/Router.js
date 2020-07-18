@@ -1,9 +1,13 @@
-import { ROUTES, ROUTES_PATH } from "./constants/routes.js"
+import firestore from "./Firestore.js"
 import { PREVIOUS_LOCATION } from "./containers/Login.js"
 import Bills  from "./containers/Bills.js"
 import NewBill from "./containers/NewBill.js"
-import firestore from "./Firestore.js"
+import Dashboard from "./containers/Dashboard.js"
+
 import BillsUI from "./views/BillsUI.js"
+import DashboardUI from "./views/DashboardUI.js"
+
+import { ROUTES, ROUTES_PATH } from "./constants/routes.js"
 
 export default () => {
   const rootDiv = document.getElementById('root')
@@ -18,30 +22,39 @@ export default () => {
       window.location.origin + pathname
     )
     if (pathname === ROUTES_PATH['Bills']) {
-      rootDiv.innerHTML = ROUTES({ pathname })
+      rootDiv.innerHTML = ROUTES({ pathname, loading: true })
       const divIcon1 = document.getElementById('layout-icon1')
       const divIcon2 = document.getElementById('layout-icon2')
       divIcon1.classList.add('active-icon')
       divIcon2.classList.remove('active-icon')
       const bills = new Bills({ document, onNavigate, firestore  })
       bills.getBills().then(data => {
-        rootDiv.innerHTML = BillsUI(data)
+        rootDiv.innerHTML = BillsUI({ data })
         const divIcon1 = document.getElementById('layout-icon1')
         const divIcon2 = document.getElementById('layout-icon2')
         divIcon1.classList.add('active-icon')
         divIcon2.classList.remove('active-icon')
         new Bills({ document, onNavigate, firestore })
+      }).catch(error => {
+        rootDiv.innerHTML = ROUTES({ pathname, error })
       })
 
     } else if (pathname === ROUTES_PATH['NewBill']) {
-      rootDiv.innerHTML = ROUTES({ pathname })
+      rootDiv.innerHTML = ROUTES({ pathname, loading: true })
       new NewBill({ document, onNavigate, firestore })
       const divIcon1 = document.getElementById('layout-icon1')
       const divIcon2 = document.getElementById('layout-icon2')
       divIcon1.classList.remove('active-icon')
       divIcon2.classList.add('active-icon')
     } else if (pathname === ROUTES_PATH['Dashboard']) {
-      rootDiv.innerHTML = ROUTES({ pathname })
+      rootDiv.innerHTML = ROUTES({ pathname, loading: true })
+      const bills = new Dashboard({ document, onNavigate, firestore })
+      bills.getBillsAllUsers().then(data => {
+        rootDiv.innerHTML = DashboardUI({ data })
+        new Dashboard({ document, onNavigate, firestore })
+      }).catch(error => {
+        rootDiv.innerHTML = ROUTES({ pathname, error })
+      })
     }
   }
   
