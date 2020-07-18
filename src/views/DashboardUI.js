@@ -1,6 +1,7 @@
 import VerticalLayout from './VerticalLayout.js'
 import ErrorPage from "./ErrorPage.js"
 import LoadingPage from "./LoadingPage.js"
+import BigBillableIcon from '../assets/svg/big_billable.js'
 
 import ArrowIcon from '../assets/svg/arrow.js'
 
@@ -9,7 +10,6 @@ export default ({ data, loading, error }) => {
   const filteredBills = (data, status) => {
     return (data && data.length) ?
       data.filter(bill => {
-        console.log('filtedred bill', bill)
         return bill.status === status
       }) : []
   }
@@ -49,8 +49,7 @@ export default ({ data, loading, error }) => {
         </div>
         <div class="dashboard-right-container">
           <h3> Validations </h3>
-          <div> </div>
-        </div>
+          <div><div id="big-billable-icon"> ${BigBillableIcon} </div></div>
       </div>
     </div>`
   )

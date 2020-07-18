@@ -1,4 +1,6 @@
 import { formatDate } from '../utils/format.js'
+import DashboardFormUI from '../views/DashboardFormUI.js'
+import BigBillableIcon from '../assets/svg/big_billable.js'
 
 export default class {
   constructor({ document, onNavigate, firestore, bills }) {
@@ -8,6 +10,28 @@ export default class {
     $('#arrow-icon1').click((e) => this.handleShowTickets(e, bills, 1))
     $('#arrow-icon2').click((e) => this.handleShowTickets(e, bills, 2))
     $('#arrow-icon3').click((e) => this.handleShowTickets(e, bills, 3))
+  }
+
+  handleEditTicket(e, bill, bills) {
+    if (this.counter === undefined || this.id !== bill.id) this.counter = 0
+    if (this.id === undefined || this.id !== bill.id) this.id = bill.id
+    if (this.counter % 2 === 0) {
+      bills.forEach(b => {
+        $(`#open-bill${b.id}`).parent().parent().css({ background: '#0D5AE5' })
+      })
+      $(`#open-bill${bill.id}`).parent().parent().css({ background: '#2A2B35' })
+      $('.dashboard-right-container div').html(DashboardFormUI(bill))
+      $('.vertical-navbar').css({ height: '150vh' })
+      this.counter ++
+    } else {
+      $(`#open-bill${bill.id}`).parent().parent().css({ background: '#0D5AE5' })
+
+      $('.dashboard-right-container div').html(`
+        <div id="big-billable-icon"> ${BigBillableIcon} </div>
+      `)
+      $('.vertical-navbar').css({ height: '120vh' })
+      this.counter ++
+    }
   }
 
   handleShowTickets(e, bills, index) {
@@ -26,7 +50,7 @@ export default class {
       const lastName = firstAndLastNames.includes('.') ?
       firstAndLastNames.split('.')[1] : firstAndLastNames
   
-      return console.log('bill.id', bill.id) || (`
+      return (`
         <div class='bill-card'>
           <div class='bill-card-name-container'>
             <div class='bill-card-name'> ${firstName} ${lastName} </div>
@@ -72,6 +96,10 @@ export default class {
         .html("")
       this.counter ++
     }
+
+    bills.forEach(bill => {
+      $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
+    })
   }
 
   getBillsAllUsers = () => {
