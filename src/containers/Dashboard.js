@@ -11,9 +11,6 @@ export default class {
   }
 
   handleShowTickets(e, bills, index) {
-    console.log('click')
-    console.log('this.counter', this.counter)
-    console.log('bills', bills)
 
     const filteredBills = (data, status) => {
       return (data && data.length) ?
@@ -29,11 +26,11 @@ export default class {
       const lastName = firstAndLastNames.includes('.') ?
       firstAndLastNames.split('.')[1] : firstAndLastNames
   
-      return (`
+      return console.log('bill.id', bill.id) || (`
         <div class='bill-card'>
           <div class='bill-card-name-container'>
             <div class='bill-card-name'> ${firstName} ${lastName} </div>
-            <span class='bill-card-grey'> ... </span>
+            <span class='bill-card-grey' id='open-bill${bill.id}'> ... </span>
           </div>
           <div class='name-price-container'>
             <span> ${bill.name} </span>
@@ -66,11 +63,13 @@ export default class {
     if (this.index === undefined || this.index !== index) this.index = index
     if (this.counter % 2 === 0) {
       $(`#arrow-icon${index}`).css({ transform: 'rotate(0deg)'})
-      $(`#status-bills-container${this.index}`).html(cards(filteredBills(bills, getStatus(index))))
+      $(`#status-bills-container${this.index}`)
+        .html(cards(filteredBills(bills, getStatus(index))))
       this.counter ++
     } else {
       $(`#arrow-icon${index}`).css({ transform: 'rotate(90deg)'})
-      $(`#status-bills-container${this.index}`).html("")
+      $(`#status-bills-container${this.index}`)
+        .html("")
       this.counter ++
     }
   }
@@ -82,6 +81,7 @@ export default class {
       .then(snapshot => {
         const bills = snapshot.docs
         .map(doc => ({
+          id: doc.id,
           ...doc.data(),
           date: doc.data().date,
           status: doc.data().status

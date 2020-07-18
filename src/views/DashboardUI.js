@@ -3,22 +3,16 @@ import ErrorPage from "./ErrorPage.js"
 import LoadingPage from "./LoadingPage.js"
 
 import ArrowIcon from '../assets/svg/arrow.js'
-import BigBillableIcon from '../assets/svg/big_billable.js'
-import DashboardFormUI from './DashboardFormUI.js'
 
 export default ({ data, loading, error }) => {
 
   const filteredBills = (data, status) => {
     return (data && data.length) ?
       data.filter(bill => {
+        console.log('filtedred bill', bill)
         return bill.status === status
       }) : []
   }
-
-  const selected = false
-  const children = selected ? DashboardFormUI() : (`
-    <div class="centered-svg-container"> ${BigBillableIcon} </div>
-  `)
 
   if (loading) {
     return LoadingPage()
@@ -28,7 +22,7 @@ export default ({ data, loading, error }) => {
 
   return (`
     <div class='layout'>
-      ${!selected ? VerticalLayout(120) : VerticalLayout(220)}
+      ${VerticalLayout(120)}
       <div class='dashboard-content'>
         <div class='bills-feed'>
           <div class='status-bills-header'>
@@ -55,7 +49,7 @@ export default ({ data, loading, error }) => {
         </div>
         <div class="dashboard-right-container">
           <h3> Validations </h3>
-          ${children}
+          <div> </div>
         </div>
       </div>
     </div>`

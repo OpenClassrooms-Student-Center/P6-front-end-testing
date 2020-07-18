@@ -84,6 +84,7 @@
 .bill-card-grey {
   mix-blend-mode: normal;
   opacity: 0.4;
+  cursor: pointer;
 }
 
 .name-price-container {
@@ -121,15 +122,9 @@
   transform: translate(-50%,-40%);
 }
 
-#arrow-icon1 {
+.arrow-icon {
   transform: rotate(90deg);
+  cursor: pointer;
 }
 
-#arrow-icon2 {
-  transform: rotate(90deg);
-}
-
-#arrow-icon3 {
-  transform: rotate(90deg);
-}
 
