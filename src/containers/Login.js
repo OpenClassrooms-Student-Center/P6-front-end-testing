@@ -62,7 +62,7 @@ export default class Login {
           return false
         }
       })
-      .catch(console.log)
+      .catch(error => error)
     } else {
       return null
     }
@@ -78,7 +78,7 @@ export default class Login {
         name: user.email.split('@')[0] 
       })
       .then(() => console.log(`User with ${user.email} is created`))
-      .catch(console.log)
+      .catch(error => error)
     } else {
       return null
     }

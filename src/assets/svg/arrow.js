@@ -1,4 +1,4 @@
-export default (() => (`
+export default `
   <svg xmlns="http://www.w3.org/2000/svg"
   width="0.18in" height="0.12in"
   viewBox="0 0 16 11">
@@ -12,4 +12,4 @@ export default (() => (`
             8.00,10.33 16.00,2.33 16.00,2.33
             16.00,2.33 14.12,0.45 14.12,0.45 Z" />
   </svg>
-`))()
+`

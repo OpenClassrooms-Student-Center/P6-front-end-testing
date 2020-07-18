@@ -41,6 +41,6 @@ export default class {
         .filter(bill => bill.email === userEmail)
         return bills
       })
-      .catch(console.log)
+      .catch(error => error)
     }
 }

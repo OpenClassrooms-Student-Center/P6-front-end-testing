@@ -52,8 +52,6 @@ export default class NewBill {
       .then(() => {
         this.onNavigate(ROUTES_PATH['Bills'])
       })
-      .catch(error => {
-        console.log(error)
-      })
+      .catch(error => error)
   }
 }

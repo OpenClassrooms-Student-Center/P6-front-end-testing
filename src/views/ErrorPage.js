@@ -10,7 +10,7 @@ export default (error) => {
           <div class='content-title'> Erreur </div>
         </div>
         <div>
-          ${error}
+          ${error ? error : ""}
         </div>
     </div>`
   )

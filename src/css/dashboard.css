@@ -121,3 +121,15 @@
   transform: translate(-50%,-40%);
 }
 
+#arrow-icon1 {
+  transform: rotate(90deg);
+}
+
+#arrow-icon2 {
+  transform: rotate(90deg);
+}
+
+#arrow-icon3 {
+  transform: rotate(90deg);
+}
+

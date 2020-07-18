@@ -48,10 +48,10 @@ export default () => {
       divIcon2.classList.add('active-icon')
     } else if (pathname === ROUTES_PATH['Dashboard']) {
       rootDiv.innerHTML = ROUTES({ pathname, loading: true })
-      const bills = new Dashboard({ document, onNavigate, firestore })
-      bills.getBillsAllUsers().then(data => {
-        rootDiv.innerHTML = DashboardUI({ data })
-        new Dashboard({ document, onNavigate, firestore })
+      const bills = new Dashboard({ document, onNavigate, firestore, bills: [] })
+      bills.getBillsAllUsers().then(bills => {
+        rootDiv.innerHTML = DashboardUI({ data: { bills } })
+        new Dashboard({ document, onNavigate, firestore, bills })
       }).catch(error => {
         rootDiv.innerHTML = ROUTES({ pathname, error })
       })
