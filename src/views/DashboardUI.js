@@ -58,7 +58,7 @@ export default ({ data, loading, error }) => {
     return bills && bills.length ? bills.map(bill => card(bill)).join("") : []
   }
 
-  const selected = true
+  const selected = false
   const children = selected ? DashboardFormUI() : (`
     <div class="centered-svg-container"> ${BigBillableIcon} </div>
   `)
@@ -71,28 +71,28 @@ export default ({ data, loading, error }) => {
 
   return (`
     <div class='layout'>
-      ${VerticalLayout(220)}
+      ${!selected ? VerticalLayout(120) : VerticalLayout(220)}
       <div class='dashboard-content'>
         <div class='bills-feed'>
+          <div class='status-bills-header'>
+            <h3> En attente (${pendingBills(data).length}) </h3>
+            <span>${ArrowIcon}</span>
+          </div>
           <div class='status-bills-container'>
-            <div class='status-bills-header'>
-              <h3> En attente (1) </h3>
-              <span>${ArrowIcon}</span>
-            </div>
             ${cards(pendingBills(data))}
           </div>
           
           <div class='status-bills-container'>
-            <div class='status-bills-header'>
-              <h3> Validé (1) </h3>
+            <div class='status-bills-header' style='margin-top: 20px;'>
+              <h3> Validé (${validBills(data).length}) </h3>
               <span>${ArrowIcon}</span>
             </div>
             ${cards(validBills(data))}
           </div>
 
           <div class='status-bills-container'>
-            <div class='status-bills-header'>
-              <h3> Refusé (1) </h3>
+            <div class='status-bills-header' style='margin-top: 20px;'>
+              <h3> Refusé (${refusedBills(data).length}) </h3>
               <span>${ArrowIcon}</span>
             </div>
             ${cards(refusedBills(data))}

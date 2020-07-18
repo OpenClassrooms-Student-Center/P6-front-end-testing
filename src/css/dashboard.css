@@ -42,7 +42,8 @@
 }
 
 .status-bills-container {
-
+  max-height: 70vh;
+  overflow-y: scroll;
 }
 
 .status-bills-header {
@@ -107,7 +108,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  height: 120vh;
+  height: 100vh;
 }
 
 .centered-svg-container svg {
