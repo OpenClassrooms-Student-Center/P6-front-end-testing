@@ -7,10 +7,7 @@ export default () => {
       ${VerticalLayout()}
       <div class='content'>
         <div class='content-header'>
-          <div class='content-title'> Erreur </div>
-        </div>
-        <div>
-          Loading...
+          <div class='content-title'> Loading... </div>
         </div>
     </div>`
   )

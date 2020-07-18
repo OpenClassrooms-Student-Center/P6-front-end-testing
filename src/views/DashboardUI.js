@@ -58,9 +58,9 @@ export default ({ data, loading, error }) => {
     return bills && bills.length ? bills.map(bill => card(bill)).join("") : []
   }
 
-  const selected = false
+  const selected = true
   const children = selected ? DashboardFormUI() : (`
-    <div class="dashboard-svg-container"> ${BigBillableIcon} </div>
+    <div class="centered-svg-container"> ${BigBillableIcon} </div>
   `)
 
   if (loading) {
@@ -71,7 +71,7 @@ export default ({ data, loading, error }) => {
 
   return (`
     <div class='layout'>
-      ${VerticalLayout()}
+      ${VerticalLayout(220)}
       <div class='dashboard-content'>
         <div class='bills-feed'>
           <div class='status-bills-container'>
@@ -96,13 +96,11 @@ export default ({ data, loading, error }) => {
               <span>${ArrowIcon}</span>
             </div>
             ${cards(refusedBills(data))}
-        </div>
-
-        <div class="dashboard-form-container">
-          <div class="centered-svg-container">
-            <h3> Validations </h3>
-            ${children}
           </div>
+        </div>
+        <div class="dashboard-right-container">
+          <h3> Validations </h3>
+          ${children}
         </div>
       </div>
     </div>`
