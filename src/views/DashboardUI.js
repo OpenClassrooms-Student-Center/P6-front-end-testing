@@ -5,14 +5,14 @@ import BigBillableIcon from '../assets/svg/big_billable.js'
 
 import ArrowIcon from '../assets/svg/arrow.js'
 
-export default ({ data, loading, error }) => {
+export const filteredBills = (data, status) => {
+  return (data && data.length) ?
+    data.filter(bill => {
+      return bill.status === status
+    }) : []
+}
 
-  const filteredBills = (data, status) => {
-    return (data && data.length) ?
-      data.filter(bill => {
-        return bill.status === status
-      }) : []
-  }
+export default ({ data, loading, error }) => {
 
   if (loading) {
     return LoadingPage()

@@ -149,6 +149,7 @@ export default class {
           date: doc.data().date,
           status: doc.data().status
         }))
+        console.log(JSON.stringify(bills))
         return bills
       })
       .catch(error => error)

@@ -15,9 +15,9 @@ import { fireEvent, screen } from "@testing-library/dom"
 //   })
 // })
 
-describe('Login Employee', () => {
-  describe("Si l'employee ne remplit pas les champs et clique sur le bouton se connecter", () => {
-    test("Il reste sur la page Login", () => {
+describe("Given that I am a user on login page", () => {
+  describe("When I do not fill fields and I click on employee button Login In", () => {
+    test("Then It should renders Login page", () => {
       document.body.innerHTML = LoginUI()
 
       const inputEmailUser = screen.getByTestId("employee-email-input")
@@ -35,8 +35,8 @@ describe('Login Employee', () => {
     })
   })
 
-  describe("Si l'employee remplit les champs au mauvais format et clique sur le bouton se connecter", () => {
-    test("Il reste sur la page Login", () => {
+  describe("When I do fill fields in incorrect format and I click on employee button Login In", () => {
+    test("Then It should renders Login page", () => {
       document.body.innerHTML = LoginUI()
 
       const inputEmailUser = screen.getByTestId("employee-email-input")
@@ -56,8 +56,8 @@ describe('Login Employee', () => {
     })
   })
 
-  describe("Si l'employee remplit les deux champs du Login Employee au bon format et clique sur le bouton se connecter", () => {
-    test("Il est identifié en tant qu'employé", () => {
+  describe("When I do fill fields in correct format and I click on employee button Login In", () => {
+    test("Then I should be identified as an Employee in app", () => {
       document.body.innerHTML = LoginUI()
     const inputData = {
       email: "johndoe@email.com",
@@ -116,16 +116,16 @@ describe('Login Employee', () => {
       )
     })  
 
-    test("Il navigue vers /note-de-frais", () => {
+    test("It should renders Bills page", () => {
       expect(screen.getAllByText('Mes notes de frais')).toBeTruthy()
     })
 
   })
 })
 
-describe('Login Admin', () => {
-  describe("Si l'admin ne remplit pas les champs et clique sur le bouton se connecter", () => {
-    test("Il reste sur la page Login", () => {
+describe("Given that I am a user on login page", () => {
+  describe("When I do not fill fields and I click on admin button Login In", () => {
+    test("Then It should renders Login page", () => {
       document.body.innerHTML = LoginUI()
 
       const inputEmailUser = screen.getByTestId("admin-email-input")
@@ -143,8 +143,8 @@ describe('Login Admin', () => {
     })
   })
 
-  describe("Si l'admin remplit les champs au mauvais format et clique sur le bouton se connecter", () => {
-    test("Il reste sur la page Login", () => {
+  describe("When I do fill fields in incorrect format and I click on admin button Login In", () => {
+    test("Then it should renders Login page", () => {
       document.body.innerHTML = LoginUI()
 
       const inputEmailUser = screen.getByTestId("admin-email-input")
@@ -164,72 +164,72 @@ describe('Login Admin', () => {
     })
   })
 
-  describe("Si l'admin remplit les deux champs du Login admin au bon format et clique sur le bouton se connecter", () => {
-    test("Il est identifié en tant qu'admin", () => {
+  describe("When I do fill fields in correct format and I click on admin button Login In", () => {
+    test("Then I should be identified as an HR admin in app", () => {
       document.body.innerHTML = LoginUI()
-    const inputData = {
-      type: "Admin",
-      email: "johndoe@email.com",
-      password: "azerty",
-      status: "connected"
-    }
+      const inputData = {
+        type: "Admin",
+        email: "johndoe@email.com",
+        password: "azerty",
+        status: "connected"
+      }
 
-    const inputEmailUser = screen.getByTestId("admin-email-input")
-    fireEvent.change(inputEmailUser, { target: { value: inputData.email } })
-    expect(inputEmailUser.value).toBe(inputData.email)
-        
-    const inputPasswordUser = screen.getByTestId("admin-password-input")
-    fireEvent.change(inputPasswordUser, { target: { value: inputData.password } })
-    expect(inputPasswordUser.value).toBe(inputData.password)
+      const inputEmailUser = screen.getByTestId("admin-email-input")
+      fireEvent.change(inputEmailUser, { target: { value: inputData.email } })
+      expect(inputEmailUser.value).toBe(inputData.email)
+          
+      const inputPasswordUser = screen.getByTestId("admin-password-input")
+      fireEvent.change(inputPasswordUser, { target: { value: inputData.password } })
+      expect(inputPasswordUser.value).toBe(inputData.password)
 
-    const form = screen.getByTestId("form-admin")
-    
-    // localStorage should be populated with form data
-    Object.defineProperty(window, "localStorage", {
-      value: {
-        getItem: jest.fn(() => null),
-        setItem: jest.fn(() => null)
-      },
-      writable: true
-    })
+      const form = screen.getByTestId("form-admin")
+      
+      // localStorage should be populated with form data
+      Object.defineProperty(window, "localStorage", {
+        value: {
+          getItem: jest.fn(() => null),
+          setItem: jest.fn(() => null)
+        },
+        writable: true
+      })
 
-    // we have to mock navigation to test it
-    const onNavigate = (pathname) => {
-      document.body.innerHTML = ROUTES({ pathname })
-    }
+      // we have to mock navigation to test it
+      const onNavigate = (pathname) => {
+        document.body.innerHTML = ROUTES({ pathname })
+      }
 
-    let PREVIOUS_LOCATION = ''
+      let PREVIOUS_LOCATION = ''
 
-    const firebase = jest.fn()
+      const firebase = jest.fn()
 
-    console.log("window.firebase", window.firebase)
+      console.log("window.firebase", window.firebase)
 
-    const login = new Login({
-      document,
-      localStorage: window.localStorage,
-      onNavigate,
-      PREVIOUS_LOCATION,
-      firebase
-    })
+      const login = new Login({
+        document,
+        localStorage: window.localStorage,
+        onNavigate,
+        PREVIOUS_LOCATION,
+        firebase
+      })
 
-    const handleSubmit = jest.fn(login.handleSubmitAdmin)    
+      const handleSubmit = jest.fn(login.handleSubmitAdmin)    
 
-    form.addEventListener("submit", handleSubmit)
-    fireEvent.submit(form)
-      expect(handleSubmit).toHaveBeenCalled()
-      expect(window.localStorage.setItem).toHaveBeenCalled()
-      expect(window.localStorage.setItem).toHaveBeenCalledWith(
-        "user",
-        JSON.stringify({
-          type: "Admin",
-          email: inputData.email,
-          password: inputData.password,
-          status: "connected"
-        })
-      )
-    })  
+      form.addEventListener("submit", handleSubmit)
+      fireEvent.submit(form)
+        expect(handleSubmit).toHaveBeenCalled()
+        expect(window.localStorage.setItem).toHaveBeenCalled()
+        expect(window.localStorage.setItem).toHaveBeenCalledWith(
+          "user",
+          JSON.stringify({
+            type: "Admin",
+            email: inputData.email,
+            password: inputData.password,
+            status: "connected"
+          })
+        )
+      })  
 
-    test("Il navigue vers /admin/dashboard", () => {
+    test("It should renders HR dashboard page", () => {
       expect(screen.getAllByText('Validations')).toBeTruthy()
     })
   
