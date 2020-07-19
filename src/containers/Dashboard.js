@@ -42,7 +42,6 @@ export default class {
       this.counter ++
     }
     $('#icon-eye-d').click(this.handleClickIconEye)
-    console.log("$('#btn-accept-bill')", $('#btn-accept-bill'))
     $('#btn-accept-bill').click((e) => this.handleAcceptSubmit(e, bill))
     $('#btn-refuse-bill').click((e) => this.handleRefuseSubmit(e, bill))
   }
