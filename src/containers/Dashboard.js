@@ -2,9 +2,10 @@ import { formatDate } from '../utils/format.js'
 import DashboardFormUI from '../views/DashboardFormUI.js'
 import BigBillableIcon from '../assets/svg/big_billable.js'
 import { ROUTES_PATH } from '../constants/routes.js'
+import Logout from "./Logout.js"
 
 export default class {
-  constructor({ document, onNavigate, firestore, bills }) {
+  constructor({ document, onNavigate, firestore, bills, localStorage }) {
     this.document = document
     this.onNavigate = onNavigate
     this.firestore = firestore
@@ -12,6 +13,7 @@ export default class {
     $('#arrow-icon2').click((e) => this.handleShowTickets(e, bills, 2))
     $('#arrow-icon3').click((e) => this.handleShowTickets(e, bills, 3))
     this.getBillsAllUsers()
+    new Logout({ localStorage, onNavigate })
   }
 
   handleClickIconEye = () => {

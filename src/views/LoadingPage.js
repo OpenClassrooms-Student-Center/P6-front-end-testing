@@ -5,11 +5,9 @@ export default () => {
   return (`
     <div class='layout'>
       ${VerticalLayout()}
-      <div class='content'>
-        <div class="text-center">
-          <div class="spinner-border">
-          </div>
-        </div>
+      <div class='content' id='loading'>
+        Loading...
+      </div>
     </div>`
   )
 }

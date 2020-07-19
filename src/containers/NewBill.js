@@ -1,8 +1,9 @@
 
 import { ROUTES_PATH } from '../constants/routes.js'
+import Logout from "./Logout.js"
 
 export default class NewBill {
-  constructor({ document, onNavigate, firestore }) {
+  constructor({ document, onNavigate, firestore, localStorage }) {
     this.document = document
     this.onNavigate = onNavigate
     this.firestore = firestore
@@ -13,6 +14,7 @@ export default class NewBill {
     file.addEventListener("change", this.handleChangeFile)
     this.fileUrl = null
     this.fileName = null
+    new Logout({ localStorage, onNavigate })
   }
   handleChangeFile = e => {
     const file = this.document.querySelector(`input[data-testid="file"]`).files[0]

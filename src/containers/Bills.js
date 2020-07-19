@@ -1,8 +1,9 @@
 import { ROUTES_PATH } from '../constants/routes.js'
 import { formatDate, formatStatus } from "../utils/format.js"
+import Logout from "./Logout.js"
 
 export default class {
-  constructor({ document, onNavigate, firestore }) {
+  constructor({ document, onNavigate, firestore, localStorage }) {
     this.document = document
     this.onNavigate = onNavigate
     this.firestore = firestore
@@ -12,6 +13,7 @@ export default class {
     if (iconEye) iconEye.forEach(icon => {
       icon.addEventListener('click', (e) => this.handleClickIconEye(icon))
     })
+    new Logout({ localStorage, onNavigate })
   }
 
   handleClickNewBill = e => {
