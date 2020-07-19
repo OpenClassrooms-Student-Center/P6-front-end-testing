@@ -1,6 +1,6 @@
 import LoginUI from "../views/LoginUI"
 import Login from '../containers/Login.js'
-import { ROUTES } from "../constants/routes"
+import { ROUTES, ROUTES_PATH } from "../constants/routes"
 import { fireEvent, screen } from "@testing-library/dom"
 
 // unit tests for Login Component
@@ -230,7 +230,7 @@ describe('Login Admin', () => {
     })  
 
     test("Il navigue vers /admin/dashboard", () => {
-      expect(screen.getAllByText('Dashboard')).toBeTruthy()
+      expect(screen.getAllByText('Validations')).toBeTruthy()
     })
   
   })

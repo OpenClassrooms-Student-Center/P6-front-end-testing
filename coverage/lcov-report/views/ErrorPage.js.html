@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for views/Actions.js</title>
+    <title>Code coverage report for views/ErrorPage.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">views</a> Actions.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">views</a> ErrorPage.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
@@ -71,7 +71,9 @@
 <a name='L12'></a><a href='#L12'>12</a>
 <a name='L13'></a><a href='#L13'>13</a>
 <a name='L14'></a><a href='#L14'>14</a>
-<a name='L15'></a><a href='#L15'>15</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -85,18 +87,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import eyeBlueIcon from "../assets/svg/eye_blue.js"
-import downloadBlueIcon from "../assets/svg/download_blue.js"
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import VerticalLayout from './VerticalLayout.js'
 &nbsp;
-export default <span class="fstat-no" title="function not covered" >(b</span>illUrl) =&gt; {
-<span class="cstat-no" title="statement not covered" >  return (</span>
-    `&lt;div class="icon-actions"&gt;
-      &lt;div id="eye" data-testid="icon-eye" data-bill-url=${billUrl}&gt;
-      ${eyeBlueIcon}
-      &lt;/div&gt;
-      &lt;div id="eye" data-testid="icon-eye" data-bill-url=${billUrl}&gt;
-      ${downloadBlueIcon}
-      &lt;/div&gt;
+export default <span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return (`</span>
+    &lt;div class='layout'&gt;
+      ${VerticalLayout()}
+      &lt;div class='content'&gt;
+        &lt;div class='content-header'&gt;
+          &lt;div class='content-title'&gt; Erreur &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          ${error ? error : ""}
+        &lt;/div&gt;
     &lt;/div&gt;`
   )
 }</pre></td></tr></table></pre>
