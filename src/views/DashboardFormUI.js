@@ -79,7 +79,7 @@ export default (bill) => {
       <div class="row">
         <div class="col-sm">
           <label for="commentary-admin" class="bold-label">Ajouter un commentaire</label>
-          <textarea class="form-control blue-border" data-testid="commentary2" rows="5"></textarea>
+          <textarea id="commentary2" class="form-control blue-border" data-testid="commentary2" rows="5"></textarea>
         </div>
       </div>
       <div class="row">

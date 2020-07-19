@@ -1,6 +1,7 @@
 import { formatDate } from '../utils/format.js'
 import DashboardFormUI from '../views/DashboardFormUI.js'
 import BigBillableIcon from '../assets/svg/big_billable.js'
+import { ROUTES_PATH } from '../constants/routes.js'
 
 export default class {
   constructor({ document, onNavigate, firestore, bills }) {
@@ -10,6 +11,7 @@ export default class {
     $('#arrow-icon1').click((e) => this.handleShowTickets(e, bills, 1))
     $('#arrow-icon2').click((e) => this.handleShowTickets(e, bills, 2))
     $('#arrow-icon3').click((e) => this.handleShowTickets(e, bills, 3))
+    this.getBillsAllUsers()
   }
 
   handleClickIconEye = () => {
@@ -40,6 +42,29 @@ export default class {
       this.counter ++
     }
     $('#icon-eye-d').click(this.handleClickIconEye)
+    console.log("$('#btn-accept-bill')", $('#btn-accept-bill'))
+    $('#btn-accept-bill').click((e) => this.handleAcceptSubmit(e, bill))
+    $('#btn-refuse-bill').click((e) => this.handleRefuseSubmit(e, bill))
+  }
+
+  handleAcceptSubmit = (e, bill) => {
+    const newBill = {
+      ...bill,
+      status: 'accepted',
+      commentAdmin: $('#commentary2').val()
+    }
+    this.updateBill(newBill)
+    this.onNavigate(ROUTES_PATH['Dashboard'])
+  }
+
+  handleRefuseSubmit = (e, bill) => {
+    const newBill = {
+      ...bill,
+      status: 'refused',
+      commentAdmin: $('#commentary2').val()
+    }
+    this.updateBill(newBill)
+    this.onNavigate(ROUTES_PATH['Dashboard'])
   }
 
   handleShowTickets(e, bills, index) {
@@ -127,4 +152,12 @@ export default class {
       })
       .catch(error => error)
     }
+
+  updateBill = (bill) => {
+    return this.firestore
+      .bill(bill.id)
+      .update(bill)
+      .then(bill => bill)
+      .catch(error => error)
+  }
 }

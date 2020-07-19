@@ -33,12 +33,12 @@ export default class {
       .get()
       .then(snapshot => {
         const bills = snapshot.docs
-        .map(doc => ({
-          ...doc.data(),
-          date: formatDate(doc.data().date),
-          status: formatStatus(doc.data().status)
-        }))
-        .filter(bill => bill.email === userEmail)
+          .map(doc => ({
+            ...doc.data(),
+            date: formatDate(doc.data().date),
+            status: formatStatus(doc.data().status)
+          }))
+          .filter(bill => bill.email === userEmail)
         return bills
       })
       .catch(error => error)
