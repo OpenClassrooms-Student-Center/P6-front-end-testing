@@ -2,26 +2,26 @@ import calendarIcon from '../assets/svg/calendar.js'
 import euroIcon from '../assets/svg/euro.js'
 import pctIcon from '../assets/svg/pct.js'
 import eyeWhite from '../assets/svg/eye_white.js'
-import downloadWhite from '../assets/svg/download_white.js'
 import { formatDate } from '../app/format.js'
 
-export default (bill) => {
-  const modal = () => (`
-    <div class="modal fade" id="modaleFileAdmin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Justificatif</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-          </div>
+export const modal = () => (`
+  <div class="modal fade" id="modaleFileAdmin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Justificatif</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
         </div>
       </div>
     </div>
+  </div>
   `)
+
+export default (bill) => {
 
   return (`
     <div class="container dashboard-form">
@@ -46,7 +46,7 @@ export default (bill) => {
         <div class="col-sm">
           <label for="amount" class="bold-label">Montant TTC </label>
           <div class='input-field input-flex'>
-            <span>${bill.amount}</span>
+            <span data-testid="amount-d">${bill.amount}</span>
             <span> ${euroIcon} </span>
           </div>
         </div>
@@ -71,7 +71,6 @@ export default (bill) => {
             <span id="file-name-admin">${bill.fileName}</span>
             <div class='icons-container'>
               <span id="icon-eye-d" data-testid="icon-eye-d" data-bill-url="${bill.fileUrl}"> ${eyeWhite} </span>
-              <span id="icon-download-d" data-testid="icon-download-d"> ${downloadWhite} </span>
             </div>
           </div>
         </div>
