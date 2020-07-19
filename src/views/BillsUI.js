@@ -5,6 +5,7 @@ import LoadingPage from "./LoadingPage.js"
 import Actions from './Actions.js'
 
 export default ({ data: bills, loading, error }) => {
+  
   const row = (bill) => {
     return (`
       <tr>
@@ -14,7 +15,7 @@ export default ({ data: bills, loading, error }) => {
         <td>${bill.amount} €</td>
         <td>${bill.status}</td>
         <td>
-          ${Actions(bill.justificatifs)}
+          ${Actions(bill.fileUrl)}
         </td>
       </tr>
       `)
@@ -50,7 +51,7 @@ export default ({ data: bills, loading, error }) => {
   
   return (`
     <div class='layout'>
-      ${VerticalLayout()}
+      ${VerticalLayout(120)}
       <div class='content'>
         <div class='content-header'>
           <div class='content-title'> Mes notes de frais </div>

@@ -12,6 +12,13 @@ export default class {
     $('#arrow-icon3').click((e) => this.handleShowTickets(e, bills, 3))
   }
 
+  handleClickIconEye = () => {
+    console.log('click')
+    const billUrl = $('#icon-eye-d').attr("data-bill-url")
+    $('#modaleFileAdmin').find(".modal-body").html(`<img src=${billUrl} />`)
+    $('#modaleFileAdmin').modal('show')
+  }
+
   handleEditTicket(e, bill, bills) {
     if (this.counter === undefined || this.id !== bill.id) this.counter = 0
     if (this.id === undefined || this.id !== bill.id) this.id = bill.id
@@ -32,6 +39,7 @@ export default class {
       $('.vertical-navbar').css({ height: '120vh' })
       this.counter ++
     }
+    $('#icon-eye-d').click(this.handleClickIconEye)
   }
 
   handleShowTickets(e, bills, index) {
@@ -100,6 +108,7 @@ export default class {
     bills.forEach(bill => {
       $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
     })
+
   }
 
   getBillsAllUsers = () => {

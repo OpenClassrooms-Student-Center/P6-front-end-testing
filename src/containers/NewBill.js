@@ -11,7 +11,8 @@ export default class NewBill {
     formNewBill.addEventListener("submit", this.handleSubmit)
     const file = this.document.querySelector(`input[data-testid="file"]`)
     file.addEventListener("change", this.handleChangeFile)
-    this.justificatifUrl = null
+    this.fileUrl = null
+    this.fileName = null
   }
   handleChangeFile = e => {
     const file = this.document.querySelector(`input[data-testid="file"]`).files[0]
@@ -23,7 +24,8 @@ export default class NewBill {
       .put(file)
       .then(snapshot => snapshot.ref.getDownloadURL())
       .then(url => {
-        this.justificatifUrl = url
+        this.fileUrl = url
+        this.fileName = fileName
       })
   }
   handleSubmit = e => {
@@ -38,7 +40,8 @@ export default class NewBill {
       vat: e.target.querySelector(`input[data-testid="vat"]`).value,
       pct: parseInt(e.target.querySelector(`input[data-testid="pct"]`).value) || 20,
       commentary: e.target.querySelector(`textarea[data-testid="commentary"]`).value,
-      justificatifs: this.justificatifUrl,
+      fileUrl: this.fileUrl,
+      fileName: this.fileName,
       status: 'pending'
     }
     this.createBill(bill)

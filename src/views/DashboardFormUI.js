@@ -6,6 +6,23 @@ import downloadWhite from '../assets/svg/download_white.js'
 import { formatDate } from '../utils/format.js'
 
 export default (bill) => {
+  const modal = () => (`
+    <div class="modal fade" id="modaleFileAdmin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Justificatif</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          </div>
+        </div>
+      </div>
+    </div>
+  `)
+
   return (`
     <div class="container dashboard-form">
       <div class="row">
@@ -51,10 +68,10 @@ export default (bill) => {
         <div class="col-sm">
           <label for="file" class="bold-label">Justificatif</label>
             <div class='input-field input-flex file-flex'>
-            <span>Ticket.jpeg</span>
+            <span id="file-name-admin">${bill.fileName}</span>
             <div class='icons-container'>
-              <span data-testid="icon-eye-d"> ${eyeWhite} </span>
-              <span data-testid="icon-download-d"> ${downloadWhite} </span>
+              <span id="icon-eye-d" data-testid="icon-eye-d" data-bill-url="${bill.fileUrl}"> ${eyeWhite} </span>
+              <span id="icon-download-d" data-testid="icon-download-d"> ${downloadWhite} </span>
             </div>
           </div>
         </div>
@@ -71,6 +88,7 @@ export default (bill) => {
         <button type="submit" id='btn-accept-bill' class="btn btn-primary">Accepter</button>
       </div>
     </div>
+    ${modal()}
     </div>
   `)
 }
