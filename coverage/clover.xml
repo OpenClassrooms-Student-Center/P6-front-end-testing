@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1595168162750" clover="3.2.0">
-  <project timestamp="1595168162750" name="All files">
-    <metrics statements="81" coveredstatements="62" conditionals="43" coveredconditionals="26" methods="24" coveredmethods="14" elements="148" coveredelements="102" complexity="0" loc="81" ncloc="81" packages="4" files="17" classes="17"/>
+<coverage generated="1595169179878" clover="3.2.0">
+  <project timestamp="1595169179878" name="All files">
+    <metrics statements="81" coveredstatements="64" conditionals="43" coveredconditionals="27" methods="24" coveredmethods="17" elements="148" coveredelements="108" complexity="0" loc="81" ncloc="81" packages="4" files="17" classes="17"/>
     <package name="assets.svg">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="arrow.js" path="/Users/athean/code/TheMakery/billable/src/assets/svg/arrow.js">
@@ -92,23 +92,23 @@
       </file>
     </package>
     <package name="views">
-      <metrics statements="28" coveredstatements="18" conditionals="28" coveredconditionals="17" methods="14" coveredmethods="8"/>
+      <metrics statements="28" coveredstatements="20" conditionals="28" coveredconditionals="18" methods="14" coveredmethods="11"/>
       <file name="Actions.js" path="/Users/athean/code/TheMakery/billable/src/views/Actions.js">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="5" count="0" type="stmt"/>
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
       </file>
       <file name="BillsUI.js" path="/Users/athean/code/TheMakery/billable/src/views/BillsUI.js">
-        <metrics statements="10" coveredstatements="7" conditionals="8" coveredconditionals="5" methods="5" coveredmethods="3"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="24" count="3" type="stmt"/>
-        <line num="25" count="3" type="cond" truecount="3" falsecount="1"/>
-        <line num="29" count="3" type="stmt"/>
-        <line num="46" count="3" type="cond" truecount="1" falsecount="1"/>
+        <metrics statements="10" coveredstatements="8" conditionals="8" coveredconditionals="6" methods="5" coveredmethods="5"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
+        <line num="25" count="5" type="cond" truecount="4" falsecount="0"/>
+        <line num="29" count="5" type="stmt"/>
+        <line num="46" count="5" type="cond" truecount="1" falsecount="1"/>
         <line num="47" count="0" type="stmt"/>
-        <line num="48" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="48" count="5" type="cond" truecount="1" falsecount="1"/>
         <line num="49" count="0" type="stmt"/>
-        <line num="52" count="3" type="stmt"/>
+        <line num="52" count="5" type="stmt"/>
       </file>
       <file name="DashboardUI.js" path="/Users/athean/code/TheMakery/billable/src/views/DashboardUI.js">
         <metrics statements="8" coveredstatements="5" conditionals="14" coveredconditionals="10" methods="3" coveredmethods="2"/>
@@ -139,11 +139,11 @@
       </file>
       <file name="VerticalLayout.js" path="/Users/athean/code/TheMakery/billable/src/views/VerticalLayout.js">
         <metrics statements="5" coveredstatements="4" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="7" count="7" type="stmt"/>
-        <line num="8" count="7" type="stmt"/>
-        <line num="9" count="7" type="cond" truecount="2" falsecount="2"/>
+        <line num="7" count="9" type="stmt"/>
+        <line num="8" count="9" type="stmt"/>
+        <line num="9" count="9" type="cond" truecount="2" falsecount="2"/>
         <line num="10" count="0" type="stmt"/>
-        <line num="27" count="7" type="stmt"/>
+        <line num="27" count="9" type="stmt"/>
       </file>
     </package>
   </project>

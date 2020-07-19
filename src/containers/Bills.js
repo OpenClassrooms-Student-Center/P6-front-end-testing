@@ -41,6 +41,7 @@ export default class {
             status: formatStatus(doc.data().status)
           }))
           .filter(bill => bill.email === userEmail)
+        console.log('bills', bills)
         return bills
       })
       .catch(error => error)
