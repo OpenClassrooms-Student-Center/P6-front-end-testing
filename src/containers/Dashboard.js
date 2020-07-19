@@ -1,4 +1,4 @@
-import { formatDate } from '../Router.js'
+import { formatDate } from '../app/format.js'
 import DashboardFormUI from '../views/DashboardFormUI.js'
 import BigBillableIcon from '../assets/svg/big_billable.js'
 import { ROUTES_PATH } from '../constants/routes.js'

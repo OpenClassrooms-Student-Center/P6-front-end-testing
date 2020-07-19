@@ -1,6 +1,15 @@
 {
+
   "scripts": {
     "test": "jest --coverage"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/app/**",
+      "!**/assets/**",
+      "!**/lcov-report/**"
+    ]
   },
   "type": "module",
   "dependencies": {},

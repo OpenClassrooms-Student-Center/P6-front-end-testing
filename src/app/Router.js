@@ -1,33 +1,13 @@
 import firestore from "./Firestore.js"
-import Login, { PREVIOUS_LOCATION } from "./containers/Login.js"
-import Bills  from "./containers/Bills.js"
-import NewBill from "./containers/NewBill.js"
-import Dashboard from "./containers/Dashboard.js"
+import Login, { PREVIOUS_LOCATION } from "../containers/Login.js"
+import Bills  from "../containers/Bills.js"
+import NewBill from "../containers/NewBill.js"
+import Dashboard from "../containers/Dashboard.js"
 
-import BillsUI from "./views/BillsUI.js"
-import DashboardUI from "./views/DashboardUI.js"
+import BillsUI from "../views/BillsUI.js"
+import DashboardUI from "../views/DashboardUI.js"
 
-import { ROUTES, ROUTES_PATH } from "./constants/routes.js"
-
-export const formatDate = (dateStr) => {
-  const date = new Date(dateStr)
-  const ye = new Intl.DateTimeFormat('fr', { year: 'numeric' }).format(date)
-  const mo = new Intl.DateTimeFormat('fr', { month: 'short' }).format(date)
-  const da = new Intl.DateTimeFormat('fr', { day: '2-digit' }).format(date)
-  const month = mo.charAt(0).toUpperCase() + mo.slice(1)
-  return `${parseInt(da)} ${month.substr(0,3)}. ${ye.toString().substr(0,2)}`
-}
- 
-export const formatStatus = (status) => {
-  switch (status) {
-    case "pending":
-      return "En attente"
-    case "accepted":
-      return "Accepté"
-    case "refused":
-      return "Refused"
-  }
-}
+import { ROUTES, ROUTES_PATH } from "../constants/routes.js"
 
 export default () => {
   const rootDiv = document.getElementById('root')

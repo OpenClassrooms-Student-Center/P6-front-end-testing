@@ -3,7 +3,7 @@ import euroIcon from '../assets/svg/euro.js'
 import pctIcon from '../assets/svg/pct.js'
 import eyeWhite from '../assets/svg/eye_white.js'
 import downloadWhite from '../assets/svg/download_white.js'
-import { formatDate } from '../Router.js'
+import { formatDate } from '../app/format.js'
 
 export default (bill) => {
   const modal = () => (`
