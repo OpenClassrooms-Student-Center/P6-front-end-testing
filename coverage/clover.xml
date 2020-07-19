@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1595169880580" clover="3.2.0">
-  <project timestamp="1595169880580" name="All files">
-    <metrics statements="81" coveredstatements="64" conditionals="43" coveredconditionals="28" methods="24" coveredmethods="16" elements="148" coveredelements="108" complexity="0" loc="81" ncloc="81" packages="4" files="17" classes="17"/>
+<coverage generated="1595172762967" clover="3.2.0">
+  <project timestamp="1595172762967" name="All files">
+    <metrics statements="81" coveredstatements="65" conditionals="43" coveredconditionals="28" methods="24" coveredmethods="17" elements="148" coveredelements="110" complexity="0" loc="81" ncloc="81" packages="4" files="17" classes="17"/>
     <package name="assets.svg">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="arrow.js" path="/Users/athean/code/TheMakery/billable/src/assets/svg/arrow.js">
@@ -92,7 +92,7 @@
       </file>
     </package>
     <package name="views">
-      <metrics statements="28" coveredstatements="20" conditionals="28" coveredconditionals="19" methods="14" coveredmethods="10"/>
+      <metrics statements="28" coveredstatements="21" conditionals="28" coveredconditionals="19" methods="14" coveredmethods="11"/>
       <file name="Actions.js" path="/Users/athean/code/TheMakery/billable/src/views/Actions.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="2" type="stmt"/>
@@ -126,8 +126,8 @@
         <line num="5" count="2" type="stmt"/>
       </file>
       <file name="LoadingPage.js" path="/Users/athean/code/TheMakery/billable/src/views/LoadingPage.js">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="5" count="0" type="stmt"/>
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
       </file>
       <file name="LoginUI.js" path="/Users/athean/code/TheMakery/billable/src/views/LoginUI.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -139,11 +139,11 @@
       </file>
       <file name="VerticalLayout.js" path="/Users/athean/code/TheMakery/billable/src/views/VerticalLayout.js">
         <metrics statements="5" coveredstatements="4" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="7" count="9" type="stmt"/>
-        <line num="8" count="9" type="stmt"/>
-        <line num="9" count="9" type="cond" truecount="2" falsecount="2"/>
+        <line num="7" count="10" type="stmt"/>
+        <line num="8" count="10" type="stmt"/>
+        <line num="9" count="10" type="cond" truecount="2" falsecount="2"/>
         <line num="10" count="0" type="stmt"/>
-        <line num="27" count="9" type="stmt"/>
+        <line num="27" count="10" type="stmt"/>
       </file>
     </package>
   </project>
