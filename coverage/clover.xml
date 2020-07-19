@@ -1,13 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1595177659747" clover="3.2.0">
-  <project timestamp="1595177659748" name="All files">
-    <metrics statements="81" coveredstatements="69" conditionals="43" coveredconditionals="34" methods="24" coveredmethods="18" elements="148" coveredelements="121" complexity="0" loc="81" ncloc="81" packages="4" files="17" classes="17"/>
-    <package name="assets.svg">
+<coverage generated="1595182982146" clover="3.2.0">
+  <project timestamp="1595182982147" name="All files">
+    <metrics statements="285" coveredstatements="78" conditionals="113" coveredconditionals="36" methods="90" coveredmethods="19" elements="488" coveredelements="133" complexity="0" loc="285" ncloc="285" packages="5" files="29" classes="29"/>
+    <package name="src">
+      <metrics statements="68" coveredstatements="9" conditionals="23" coveredconditionals="2" methods="17" coveredmethods="1"/>
+      <file name="Firestore.js" path="/Users/athean/code/TheMakery/billable/src/Firestore.js">
+        <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="8" coveredmethods="1"/>
+        <line num="5" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="6" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+      </file>
+      <file name="Router.js" path="/Users/athean/code/TheMakery/billable/src/Router.js">
+        <metrics statements="61" coveredstatements="2" conditionals="19" coveredconditionals="0" methods="9" coveredmethods="0"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="45" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="66" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="73" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="87" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="89" count="0" type="stmt"/>
+        <line num="90" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="91" count="0" type="stmt"/>
+        <line num="95" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="97" count="0" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.assets.svg">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="arrow.js" path="/Users/athean/code/TheMakery/billable/src/assets/svg/arrow.js">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
       <file name="big_billable.js" path="/Users/athean/code/TheMakery/billable/src/assets/svg/big_billable.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="calendar.js" path="/Users/athean/code/TheMakery/billable/src/assets/svg/calendar.js">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
       <file name="disconnect.js" path="/Users/athean/code/TheMakery/billable/src/assets/svg/disconnect.js">
@@ -16,22 +96,34 @@
       <file name="download_blue.js" path="/Users/athean/code/TheMakery/billable/src/assets/svg/download_blue.js">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
+      <file name="download_white.js" path="/Users/athean/code/TheMakery/billable/src/assets/svg/download_white.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="euro.js" path="/Users/athean/code/TheMakery/billable/src/assets/svg/euro.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
       <file name="eye_blue.js" path="/Users/athean/code/TheMakery/billable/src/assets/svg/eye_blue.js">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
+      <file name="eye_white.js" path="/Users/athean/code/TheMakery/billable/src/assets/svg/eye_white.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
       <file name="mail.js" path="/Users/athean/code/TheMakery/billable/src/assets/svg/mail.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="pct.js" path="/Users/athean/code/TheMakery/billable/src/assets/svg/pct.js">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
       <file name="window.js" path="/Users/athean/code/TheMakery/billable/src/assets/svg/window.js">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
-    <package name="constants">
+    <package name="src.constants">
       <metrics statements="8" coveredstatements="8" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
       <file name="routes.js" path="/Users/athean/code/TheMakery/billable/src/constants/routes.js">
         <metrics statements="8" coveredstatements="8" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
         <line num="14" count="9" type="cond" truecount="5" falsecount="0"/>
         <line num="16" count="1" type="stmt"/>
         <line num="18" count="3" type="stmt"/>
@@ -40,11 +132,116 @@
         <line num="24" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="containers">
-      <metrics statements="45" coveredstatements="36" conditionals="10" coveredconditionals="4" methods="9" coveredmethods="5"/>
+    <package name="src.containers">
+      <metrics statements="179" coveredstatements="36" conditionals="53" coveredconditionals="4" methods="56" coveredmethods="5"/>
+      <file name="Bills.js" path="/Users/athean/code/TheMakery/billable/src/containers/Bills.js">
+        <metrics statements="25" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="10" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+      </file>
+      <file name="Dashboard.js" path="/Users/athean/code/TheMakery/billable/src/containers/Dashboard.js">
+        <metrics statements="74" coveredstatements="0" conditionals="35" coveredconditionals="0" methods="27" coveredmethods="0"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="27" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="28" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="29" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="74" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="82" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="84" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="105" count="0" type="stmt"/>
+        <line num="106" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="109" count="0" type="stmt"/>
+        <line num="110" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="112" count="0" type="stmt"/>
+        <line num="114" count="0" type="stmt"/>
+        <line num="116" count="0" type="stmt"/>
+        <line num="120" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="121" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="122" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="123" count="0" type="stmt"/>
+        <line num="124" count="0" type="stmt"/>
+        <line num="126" count="0" type="stmt"/>
+        <line num="128" count="0" type="stmt"/>
+        <line num="129" count="0" type="stmt"/>
+        <line num="131" count="0" type="stmt"/>
+        <line num="134" count="0" type="stmt"/>
+        <line num="135" count="0" type="stmt"/>
+        <line num="140" count="0" type="stmt"/>
+        <line num="141" count="0" type="stmt"/>
+        <line num="145" count="0" type="stmt"/>
+        <line num="146" count="0" type="stmt"/>
+        <line num="152" count="0" type="stmt"/>
+        <line num="153" count="0" type="stmt"/>
+        <line num="155" count="0" type="stmt"/>
+        <line num="158" count="0" type="stmt"/>
+        <line num="159" count="0" type="stmt"/>
+        <line num="162" count="0" type="stmt"/>
+        <line num="163" count="0" type="stmt"/>
+      </file>
       <file name="Login.js" path="/Users/athean/code/TheMakery/billable/src/containers/Login.js">
         <metrics statements="45" coveredstatements="36" conditionals="10" coveredconditionals="4" methods="9" coveredmethods="5"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
         <line num="10" count="2" type="stmt"/>
@@ -90,29 +287,75 @@
         <line num="81" count="0" type="stmt"/>
         <line num="83" count="4" type="stmt"/>
       </file>
+      <file name="Logout.js" path="/Users/athean/code/TheMakery/billable/src/containers/Logout.js">
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+      </file>
+      <file name="NewBill.js" path="/Users/athean/code/TheMakery/billable/src/containers/NewBill.js">
+        <metrics statements="29" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+      </file>
     </package>
-    <package name="views">
-      <metrics statements="28" coveredstatements="25" conditionals="28" coveredconditionals="25" methods="14" coveredmethods="12"/>
+    <package name="src.views">
+      <metrics statements="30" coveredstatements="25" conditionals="32" coveredconditionals="25" methods="16" coveredmethods="12"/>
       <file name="Actions.js" path="/Users/athean/code/TheMakery/billable/src/views/Actions.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="2" type="stmt"/>
       </file>
       <file name="BillsUI.js" path="/Users/athean/code/TheMakery/billable/src/views/BillsUI.js">
         <metrics statements="10" coveredstatements="7" conditionals="8" coveredconditionals="5" methods="5" coveredmethods="3"/>
-        <line num="7" count="2" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="23" count="3" type="cond" truecount="3" falsecount="1"/>
-        <line num="28" count="3" type="stmt"/>
-        <line num="45" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="23" count="4" type="cond" truecount="3" falsecount="1"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="45" count="4" type="cond" truecount="1" falsecount="1"/>
         <line num="46" count="0" type="stmt"/>
-        <line num="47" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="47" count="4" type="cond" truecount="1" falsecount="1"/>
         <line num="48" count="0" type="stmt"/>
-        <line num="51" count="3" type="stmt"/>
+        <line num="51" count="4" type="stmt"/>
+      </file>
+      <file name="DashboardFormUI.js" path="/Users/athean/code/TheMakery/billable/src/views/DashboardFormUI.js">
+        <metrics statements="2" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
       </file>
       <file name="DashboardUI.js" path="/Users/athean/code/TheMakery/billable/src/views/DashboardUI.js">
         <metrics statements="8" coveredstatements="8" conditionals="14" coveredconditionals="14" methods="3" coveredmethods="3"/>
-        <line num="8" count="3" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
         <line num="9" count="12" type="cond" truecount="4" falsecount="0"/>
         <line num="11" count="12" type="stmt"/>
         <line num="17" count="5" type="cond" truecount="2" falsecount="0"/>
@@ -135,15 +378,15 @@
       </file>
       <file name="NewBillUI.js" path="/Users/athean/code/TheMakery/billable/src/views/NewBillUI.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="5" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
       </file>
       <file name="VerticalLayout.js" path="/Users/athean/code/TheMakery/billable/src/views/VerticalLayout.js">
         <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
-        <line num="7" count="14" type="stmt"/>
-        <line num="8" count="14" type="stmt"/>
-        <line num="9" count="14" type="cond" truecount="4" falsecount="0"/>
+        <line num="7" count="16" type="stmt"/>
+        <line num="8" count="16" type="stmt"/>
+        <line num="9" count="16" type="cond" truecount="4" falsecount="0"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="27" count="13" type="stmt"/>
+        <line num="27" count="15" type="stmt"/>
       </file>
     </package>
   </project>

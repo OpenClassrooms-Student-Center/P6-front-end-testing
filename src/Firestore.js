@@ -1,7 +1,9 @@
+
+
 class Firestore {
   constructor() {
-    this.store = window.firebase.firestore()
-    this.storage = window.firebase.storage()
+    this.store = window.firebase ? window.firebase.firestore() : () => null
+    this.storage = window.firebase ? window.firebase.storage() : () => null
   }
 
   user = uid => this.store.doc(`users/${uid}`)

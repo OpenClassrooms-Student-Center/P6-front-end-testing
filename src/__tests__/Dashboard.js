@@ -1,5 +1,6 @@
 import { screen } from "@testing-library/dom"
 import DashboardUI, { filteredBills } from "../views/DashboardUI.js"
+import Dashboard from "../containers/Dashboard.js"
 
 const bills = [{
     "id": "47qAXb6fIm2zOKkLzMro",

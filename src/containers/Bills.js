@@ -1,5 +1,5 @@
 import { ROUTES_PATH } from '../constants/routes.js'
-import { formatDate, formatStatus } from "../utils/format.js"
+import { formatDate, formatStatus } from "../Router.js"
 import Logout from "./Logout.js"
 
 export default class {
