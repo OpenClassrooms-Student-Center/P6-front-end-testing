@@ -14,7 +14,7 @@ export default class NewBill {
     file.addEventListener("change", this.handleChangeFile)
     this.fileUrl = null
     this.fileName = null
-    new Logout({ localStorage, onNavigate })
+    new Logout({ document, localStorage, onNavigate })
   }
   handleChangeFile = e => {
     const file = this.document.querySelector(`input[data-testid="file"]`).files[0]
@@ -51,12 +51,14 @@ export default class NewBill {
   }
 
   createBill = (bill) => {
-    this.firestore
+    if (this.firestore) {
+      this.firestore
       .bills()
       .add(bill)
       .then(() => {
         this.onNavigate(ROUTES_PATH['Bills'])
       })
       .catch(error => error)
+    }
   }
 }

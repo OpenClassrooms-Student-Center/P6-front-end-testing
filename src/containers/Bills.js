@@ -13,7 +13,7 @@ export default class {
     if (iconEye) iconEye.forEach(icon => {
       icon.addEventListener('click', (e) => this.handleClickIconEye(icon))
     })
-    new Logout({ localStorage, onNavigate })
+    new Logout({ document, localStorage, onNavigate })
   }
 
   handleClickNewBill = e => {
@@ -30,7 +30,8 @@ export default class {
     const userEmail = localStorage.getItem('user') ?
       JSON.parse(localStorage.getItem('user')).email : ""
     console.log('getBills userEmail', userEmail)
-    return this.firestore
+    if (this.firestore) {
+      return this.firestore
       .bills()
       .get()
       .then(snapshot => {
@@ -46,4 +47,5 @@ export default class {
       })
       .catch(error => error)
     }
+  }
 }

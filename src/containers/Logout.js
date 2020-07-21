@@ -1,7 +1,9 @@
 import { ROUTES_PATH } from '../constants/routes.js'
+import $ from '../external/jquery.js'
 
 export default class Logout {
-  constructor({ onNavigate, localStorage }) {
+  constructor({ document, onNavigate, localStorage }) {
+    this.document = document
     this.onNavigate = onNavigate
     this.localStorage = localStorage
     $('#layout-disconnect').click(this.handleClick)

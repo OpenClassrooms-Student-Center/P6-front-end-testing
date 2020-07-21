@@ -202,8 +202,6 @@ describe("Given that I am a user on login page", () => {
 
       const firebase = jest.fn()
 
-      console.log("window.firebase", window.firebase)
-
       const login = new Login({
         document,
         localStorage: window.localStorage,

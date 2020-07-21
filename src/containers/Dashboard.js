@@ -3,6 +3,7 @@ import DashboardFormUI from '../views/DashboardFormUI.js'
 import BigBillableIcon from '../assets/svg/big_billable.js'
 import { ROUTES_PATH } from '../constants/routes.js'
 import Logout from "./Logout.js"
+import $ from '../external/jquery.js'
 
 export default class {
   constructor({ document, onNavigate, firestore, bills, localStorage }) {
@@ -138,7 +139,8 @@ export default class {
   }
 
   getBillsAllUsers = () => {
-    return this.firestore
+    if (this.firestore) {
+      return this.firestore
       .bills()
       .get()
       .then(snapshot => {
@@ -154,6 +156,8 @@ export default class {
       })
       .catch(error => error)
     }
+  }
+    
 
   updateBill = (bill) => {
     return this.firestore

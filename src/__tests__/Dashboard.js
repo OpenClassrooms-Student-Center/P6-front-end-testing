@@ -1,6 +1,8 @@
-import { screen } from "@testing-library/dom"
+import { fireEvent, screen } from "@testing-library/dom"
 import DashboardUI, { filteredBills } from "../views/DashboardUI.js"
 import Dashboard from "../containers/Dashboard.js"
+import { ROUTES } from "../constants/routes"
+import { localStorageMock } from "../__mocks__/localStorage.js"
 
 const bills = [{
     "id": "47qAXb6fIm2zOKkLzMro",
@@ -65,35 +67,60 @@ const bills = [{
 ]
 describe('Given I am connected as an Admin', () => {
   describe('When I am on Dashboard page, there are bills, and there is one pending', () => {
-    test(('Then, filteredBills by pending status should return 1 bill'), () => {
+    test('Then, filteredBills by pending status should return 1 bill', () => {
       const filtered_bills = filteredBills(bills, "pending")
       expect(filtered_bills.length).toBe(1)
     })
   })
   describe('When I am on Dashboard page, there are bills, and there is one accepted', () => {
-    test(('Then, filteredBills by accepted status should return 1 bill'), () => {
+    test('Then, filteredBills by accepted status should return 1 bill', () => {
       const filtered_bills = filteredBills(bills, "accepted")
       expect(filtered_bills.length).toBe(1)
     })
   })
   describe('When I am on Dashboard page, there are bills, and there is two refused', () => {
-    test(('Then, filteredBills by accepted status should return 2 bills'), () => {
+    test('Then, filteredBills by accepted status should return 2 bills', () => {
       const filtered_bills = filteredBills(bills, "refused")
       expect(filtered_bills.length).toBe(2)
     })
   })
   describe('When I am on Dashboard page but it is loading', () => {
-    test(('Then, Loading page should be rendered'), () => {
+    test('Then, Loading page should be rendered', () => {
       const html = DashboardUI({ loading: true })
       document.body.innerHTML = html
       expect(screen.getAllByText('Loading...')).toBeTruthy()
     })
   })
   describe('When I am on Dashboard page but back-end send an error message', () => {
-    test(('Then, Error page should be rendered'), () => {
+    test('Then, Error page should be rendered', () => {
       const html = DashboardUI({ error: 'some error message' })
       document.body.innerHTML = html
       expect(screen.getAllByText('Erreur')).toBeTruthy()
+    })
+  })
+
+  describe('When I am on Dashboard page and I click on first arrow', () => {
+    beforeEach(() => {
+    })
+    test('Then, pending tickets list should be unfolding', () => {
+      const html = DashboardUI({ data: bills })
+      document.body.innerHTML = html
+
+      const onNavigate = (pathname) => {
+        document.body.innerHTML = ROUTES({ pathname })
+      }
+      const firestore = null
+
+      Object.defineProperty(window, 'localStorage', { value: localStorageMock })
+      const dashboard = new Dashboard({
+        document, onNavigate, firestore, bills, localStorage: window.localStorage
+      })
+      const handleShowTickets = jest.fn((e) => dashboard.handleShowTickets(e, bills, 1))    
+      const icon1 = screen.getByTestId('arrow-icon1')
+      icon1.addEventListener('click', handleShowTickets)
+      fireEvent.click(icon1)
+      expect(handleShowTickets).toHaveBeenCalled()
+
     })
   })
 })

@@ -8,7 +8,7 @@ describe("Given I am connected as an employee", () => {
     test("Then ...", () => {
       const html = NewBillUI({ data: {}})
       document.body.innerHTML = html
-      //to-do write expect expression
+      //to-do write assertion
     })
   })
 })
