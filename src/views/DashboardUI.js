@@ -2,15 +2,8 @@ import VerticalLayout from './VerticalLayout.js'
 import ErrorPage from "./ErrorPage.js"
 import LoadingPage from "./LoadingPage.js"
 import BigBillableIcon from '../assets/svg/big_billable.js'
-
+import { filteredBills } from '../containers/Dashboard.js'
 import ArrowIcon from '../assets/svg/arrow.js'
-
-export const filteredBills = (data, status) => {
-  return (data && data.length) ?
-    data.filter(bill => {
-      return bill.status === status
-    }) : []
-}
 
 export default ({ data, loading, error }) => {
 

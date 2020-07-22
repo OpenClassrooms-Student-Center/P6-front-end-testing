@@ -5,6 +5,53 @@ import { ROUTES_PATH } from '../constants/routes.js'
 import Logout from "./Logout.js"
 import $ from '../external/jquery.js'
 
+export const filteredBills = (data, status) => {
+  return (data && data.length) ?
+    data.filter(bill => {
+      return bill.status === status
+    }) : []
+}
+
+export const card = (bill) => {
+  const firstAndLastNames = bill.email.split('@')[0]
+  const firstName = firstAndLastNames.includes('.') ?
+    firstAndLastNames.split('.')[0] : ''
+  const lastName = firstAndLastNames.includes('.') ?
+  firstAndLastNames.split('.')[1] : firstAndLastNames
+
+  return (`
+    <div class='bill-card'>
+      <div class='bill-card-name-container'>
+        <div class='bill-card-name'> ${firstName} ${lastName} </div>
+        <span class='bill-card-grey' id='open-bill${bill.id}' data-testid='open-bill${bill.id}' > ... </span>
+      </div>
+      <div class='name-price-container'>
+        <span> ${bill.name} </span>
+        <span> ${bill.amount} € </span>
+      </div>
+      <div class='date-type-container'>
+        <span> ${formatDate(bill.date)} </span>
+        <span> ${bill.type} </span>
+      </div>
+    </div>
+  `)
+}
+
+export const cards = (bills) => {
+  return bills && bills.length ? bills.map(bill => card(bill)).join("") : []
+}
+
+export const getStatus = (index) => {
+  switch (index) {
+    case 1:
+      return "pending"
+    case 2:
+      return "accepted"
+    case 3:
+      return "refused"
+  }
+}
+
 export default class {
   constructor({ document, onNavigate, firestore, bills, localStorage }) {
     this.document = document
@@ -70,63 +117,15 @@ export default class {
   }
 
   handleShowTickets(e, bills, index) {
-
-    const filteredBills = (data, status) => {
-      return (data && data.length) ?
-        data.filter(bill => {
-          return bill.status === status
-        }) : []
-    }
-  
-    const card = (bill) => {
-      const firstAndLastNames = bill.email.split('@')[0]
-      const firstName = firstAndLastNames.includes('.') ?
-        firstAndLastNames.split('.')[0] : ''
-      const lastName = firstAndLastNames.includes('.') ?
-      firstAndLastNames.split('.')[1] : firstAndLastNames
-  
-      return (`
-        <div class='bill-card'>
-          <div class='bill-card-name-container'>
-            <div class='bill-card-name'> ${firstName} ${lastName} </div>
-            <span class='bill-card-grey' id='open-bill${bill.id}'> ... </span>
-          </div>
-          <div class='name-price-container'>
-            <span> ${bill.name} </span>
-            <span> ${bill.amount} € </span>
-          </div>
-          <div class='date-type-container'>
-            <span> ${formatDate(bill.date)} </span>
-            <span> ${bill.type} </span>
-          </div>
-        </div>
-      `)
-    }
-  
-    const cards = (bills) => {
-      return bills && bills.length ? bills.map(bill => card(bill)).join("") : []
-    }
-
-    const getStatus = (index) => {
-      switch (index) {
-        case 1:
-          return "pending"
-        case 2:
-          return "accepted"
-        case 3:
-          return "refused"
-      }
-    }
-
     if (this.counter === undefined || this.index !== index) this.counter = 0
     if (this.index === undefined || this.index !== index) this.index = index
     if (this.counter % 2 === 0) {
-      $(`#arrow-icon${index}`).css({ transform: 'rotate(0deg)'})
+      $(`#arrow-icon${this.index}`).css({ transform: 'rotate(0deg)'})
       $(`#status-bills-container${this.index}`)
-        .html(cards(filteredBills(bills, getStatus(index))))
+        .html(cards(filteredBills(bills, getStatus(this.index))))
       this.counter ++
     } else {
-      $(`#arrow-icon${index}`).css({ transform: 'rotate(90deg)'})
+      $(`#arrow-icon${this.index}`).css({ transform: 'rotate(90deg)'})
       $(`#status-bills-container${this.index}`)
         .html("")
       this.counter ++
@@ -135,6 +134,8 @@ export default class {
     bills.forEach(bill => {
       $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
     })
+
+    return bills
 
   }
 
