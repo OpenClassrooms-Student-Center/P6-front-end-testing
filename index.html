@@ -40,11 +40,14 @@
     <div id="root"></div>
     <!-- Datepicker.js -->
     <script src="src/app/datepicker.js"></script>
+    <!-- <script type="text/html" src="../node_modules/dotenv" > -->
+    </script>
     <script type="module">
       import Router from "./src/app/Router.js"
       import firestore from "./src/app/Firestore.js"
       Router()
     </script>
+
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-storage.js"></script>
@@ -63,7 +66,6 @@
       }
       // Initialize Firebase
       window.firebase.initializeApp(firebaseConfig)
-
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

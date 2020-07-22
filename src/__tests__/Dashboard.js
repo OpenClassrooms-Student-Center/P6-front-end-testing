@@ -1,5 +1,6 @@
 import { fireEvent, screen } from "@testing-library/dom"
 import userEvent from '@testing-library/user-event'
+import DashboardFormUI from "../views/DashboardUI.js"
 import DashboardUI from "../views/DashboardUI.js"
 import Dashboard, { filteredBills, cards } from "../containers/Dashboard.js"
 import { ROUTES } from "../constants/routes"
@@ -163,4 +164,33 @@ describe('Given I am connected as an Admin', () => {
     })
   })
 
+  describe('When I am on Dashboard and there are no bills', () => {
+    test('Then, no cards should be shown', () => {
+      const html = cards([])
+      document.body.innerHTML = html
+
+      const iconEdit = screen.queryByTestId('open-bill47qAXb6fIm2zOKkLzMro')
+      expect(iconEdit).toBeNull()
+    })
+  })
+  // $('.dashboard-right-container div').html(DashboardFormUI(bill))
+})
+
+describe('Given I am connected as Admin and I am on Dashboard page and I clicked on a pending bill', () => {
+  describe('When I click on accept button', () => {
+    test('I should be sent on Dashboard with no form at right', () => {
+      Object.defineProperty(window, 'localStorage', { value: localStorageMock })
+      window.localStorage.setItem('user', JSON.stringify({
+        type: 'Admin'
+      }))
+      const html = DashboardFormUI(bills[0])
+      document.body.innerHTML = html
+      screen.debug()
+      // const AcceptButton = screen.queryByTestId('btn-accept-bill-d')
+      // get form rather than button
+      const form = screen.getByTestId('btn-accept-bill-d')
+      userEvent.submit(AcceptButton)
+
+    })
+  })
 })
