@@ -3,6 +3,7 @@
     "test": "jest --coverage"
   },
   "jest": {
+    "verbose": false,
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
       "!**/app/**",
