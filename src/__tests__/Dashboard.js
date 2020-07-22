@@ -1,4 +1,4 @@
-import { fireEvent, screen, getByTestId } from "@testing-library/dom"
+import { fireEvent, screen } from "@testing-library/dom"
 import userEvent from '@testing-library/user-event'
 import DashboardFormUI from "../views/DashboardFormUI.js"
 import DashboardUI from "../views/DashboardUI.js"
@@ -176,7 +176,7 @@ describe('Given I am connected as an Admin', () => {
 })
 
 describe('Given I am connected as Admin, and I am on Dashboard page, and I clicked on a pending bill', () => {
-  describe('When I click on accept or refuse button', () => {
+  describe('When I click on accept button', () => {
     test('I should be sent on Dashboard with big billable icon instead of form', () => {
       Object.defineProperty(window, 'localStorage', { value: localStorageMock })
       window.localStorage.setItem('user', JSON.stringify({
@@ -192,19 +192,37 @@ describe('Given I am connected as Admin, and I am on Dashboard page, and I click
         document, onNavigate, firestore, bills, localStorage: window.localStorage
       })
 
-      const form = screen.getByTestId("dashboard-form")
-
-      const handleAcceptSubmit = jest.fn(dashboard.handleAcceptSubmit)
-      form.addEventListener("submit", handleAcceptSubmit)
-      fireEvent.submit(form)
+      const acceptButton = screen.getByTestId("btn-accept-bill-d")
+      const handleAcceptSubmit = jest.fn((e) => dashboard.handleAcceptSubmit(e, bills[0]))
+      acceptButton.addEventListener("click", handleAcceptSubmit)
+      fireEvent.click(acceptButton)
       expect(handleAcceptSubmit).toHaveBeenCalled()
       const bigBillableIcon = screen.queryByTestId("big-billable-icon")
       expect(bigBillableIcon).toBeTruthy()
-
-      const handleRefuseSubmit = jest.fn(dashboard.handleRefuseSubmit)
-      form.addEventListener("submit", handleRefuseSubmit)
-      fireEvent.submit(form)
+    })
+  })
+  describe('When I click on refuse button', () => {
+    test('I should be sent on Dashboard with big billable icon instead of form', () => {
+      Object.defineProperty(window, 'localStorage', { value: localStorageMock })
+      window.localStorage.setItem('user', JSON.stringify({
+        type: 'Admin'
+      }))
+      const html = DashboardFormUI(bills[0])
+      document.body.innerHTML = html
+      const onNavigate = (pathname) => {
+        document.body.innerHTML = ROUTES({ pathname })
+      }
+      const firestore = null
+      const dashboard = new Dashboard({
+        document, onNavigate, firestore, bills, localStorage: window.localStorage
+      })
+      const refuseButton = screen.getByTestId("btn-refuse-bill-d")
+      const handleRefuseSubmit = jest.fn((e) => dashboard.handleRefuseSubmit(e, bills[0]))
+      refuseButton.addEventListener("click", handleRefuseSubmit)
+      fireEvent.click(refuseButton)
       expect(handleRefuseSubmit).toHaveBeenCalled()
+      const bigBillableIcon = screen.queryByTestId("big-billable-icon")
+      expect(bigBillableIcon).toBeTruthy()
     })
   })
 })

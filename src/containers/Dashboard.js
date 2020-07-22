@@ -66,7 +66,7 @@ export default class {
   handleClickIconEye = () => {
     const billUrl = $('#icon-eye-d').attr("data-bill-url")
     $('#modaleFileAdmin1').find(".modal-body").html(`<img src=${billUrl} />`)
-    $('#modaleFileAdmin1').modal('show')
+    if (typeof $('#modaleFileAdmin1').modal === 'func') $('#modaleFileAdmin1').modal('show')
   }
 
   handleEditTicket(e, bill, bills) {

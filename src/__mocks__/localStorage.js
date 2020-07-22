@@ -1,5 +1,5 @@
 export const localStorageMock = (function() {
-  const store = {};
+  let store = {};
   return {
     getItem: function(key) {
       return JSON.stringify(store[key])
