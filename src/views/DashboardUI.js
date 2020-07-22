@@ -42,7 +42,7 @@ export default ({ data, loading, error }) => {
         </div>
         <div class="dashboard-right-container">
           <h3> Validations </h3>
-          <div><div id="big-billable-icon"> ${BigBillableIcon} </div></div>
+          <div><div id="big-billable-icon" data-testid="big-billable-icon"> ${BigBillableIcon} </div></div>
       </div>
     </div>`
   )

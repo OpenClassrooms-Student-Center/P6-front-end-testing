@@ -7,7 +7,6 @@ export default class NewBill {
     this.document = document
     this.onNavigate = onNavigate
     this.firestore = firestore
-    console.log("firebase1", firebase)
     const formNewBill = this.document.querySelector(`form[data-testid="form-new-bill"]`)
     formNewBill.addEventListener("submit", this.handleSubmit)
     const file = this.document.querySelector(`input[data-testid="file"]`)

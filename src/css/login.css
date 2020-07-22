@@ -2,6 +2,7 @@
   width: 80%;
   margin:auto;
   margin-top: 40px;
+  margin-top: 10%;
 }
 
 .form-signin {
@@ -9,6 +10,7 @@
   max-width: 330px;
   padding: 15px;
   margin: auto;
+
 }
 
 h2 {
@@ -22,7 +24,6 @@ h2 {
 .form-signin .form-control {
   position: relative;
   box-sizing: border-box;
-  height: auto;
   padding: 10px;
   font-size: 16px;
 }
@@ -44,7 +45,7 @@ h2 {
   border-radius: 50px;
 }
 .card {
-  width: 80%;
+  max-width: 500px;
   margin:auto;
 }
 label {

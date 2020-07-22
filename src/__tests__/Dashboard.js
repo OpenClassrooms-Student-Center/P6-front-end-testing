@@ -1,6 +1,6 @@
 import { fireEvent, screen, getByTestId } from "@testing-library/dom"
 import userEvent from '@testing-library/user-event'
-import DashboardFormUI from "../views/DashboardUI.js"
+import DashboardFormUI from "../views/DashboardFormUI.js"
 import DashboardUI from "../views/DashboardUI.js"
 import Dashboard, { filteredBills, cards } from "../containers/Dashboard.js"
 import { ROUTES } from "../constants/routes"
@@ -173,23 +173,68 @@ describe('Given I am connected as an Admin', () => {
       expect(iconEdit).toBeNull()
     })
   })
-  // $('.dashboard-right-container div').html(DashboardFormUI(bill))
 })
 
-describe('Given I am connected as Admin and I am on Dashboard page and I clicked on a pending bill', () => {
-  describe('When I click on accept button', () => {
-    test('I should be sent on Dashboard with no form at right', () => {
+describe('Given I am connected as Admin, and I am on Dashboard page, and I clicked on a pending bill', () => {
+  describe('When I click on accept or refuse button', () => {
+    test('I should be sent on Dashboard with big billable icon instead of form', () => {
       Object.defineProperty(window, 'localStorage', { value: localStorageMock })
       window.localStorage.setItem('user', JSON.stringify({
         type: 'Admin'
       }))
       const html = DashboardFormUI(bills[0])
       document.body.innerHTML = html
-      // screen.debug()
-      // get form rather than button
-      // const form = getByTestId('')
-      // userEvent.submit(form)
+      const onNavigate = (pathname) => {
+        document.body.innerHTML = ROUTES({ pathname })
+      }
+      const firestore = null
+      const dashboard = new Dashboard({
+        document, onNavigate, firestore, bills, localStorage: window.localStorage
+      })
 
+      const form = screen.getByTestId("dashboard-form")
+
+      const handleAcceptSubmit = jest.fn(dashboard.handleAcceptSubmit)
+      form.addEventListener("submit", handleAcceptSubmit)
+      fireEvent.submit(form)
+      expect(handleAcceptSubmit).toHaveBeenCalled()
+      const bigBillableIcon = screen.queryByTestId("big-billable-icon")
+      expect(bigBillableIcon).toBeTruthy()
+
+      const handleRefuseSubmit = jest.fn(dashboard.handleRefuseSubmit)
+      form.addEventListener("submit", handleRefuseSubmit)
+      fireEvent.submit(form)
+      expect(handleRefuseSubmit).toHaveBeenCalled()
     })
   })
 })
+
+describe('Given I am connected as Admin and I am on Dashboard page and I clicked on a bill', () => {
+  describe('When I click on the icon eye', () => {
+    test('A modal should open, showing the file', () => {
+      Object.defineProperty(window, 'localStorage', { value: localStorageMock })
+      window.localStorage.setItem('user', JSON.stringify({
+        type: 'Admin'
+      }))
+      const html = DashboardFormUI(bills[0])
+      document.body.innerHTML = html
+      const onNavigate = (pathname) => {
+        document.body.innerHTML = ROUTES({ pathname })
+      }
+      const firestore = null
+      const dashboard = new Dashboard({
+        document, onNavigate, firestore, bills, localStorage: window.localStorage
+      })
+
+      const handleClickIconEye = jest.fn(dashboard.handleClickIconEye)
+      const eye = screen.getByTestId('icon-eye-d')
+      eye.addEventListener('click', handleClickIconEye)
+      userEvent.click(eye)
+      expect(handleClickIconEye).toHaveBeenCalled()
+
+      const modale = screen.getByTestId('modaleFileAdmin')
+      expect(modale).toBeTruthy()
+    })
+  })
+})
+

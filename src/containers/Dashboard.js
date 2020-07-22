@@ -4,6 +4,7 @@ import BigBillableIcon from '../assets/svg/big_billable.js'
 import { ROUTES_PATH } from '../constants/routes.js'
 import Logout from "./Logout.js"
 import $ from '../external/jquery.js'
+// jQuery.noConflict(); 
 
 export const filteredBills = (data, status) => {
   return (data && data.length) ?
@@ -67,6 +68,7 @@ export default class {
   handleClickIconEye = () => {
     const billUrl = $('#icon-eye-d').attr("data-bill-url")
     $('#modaleFileAdmin').find(".modal-body").html(`<img src=${billUrl} />`)
+    console.log(this.document.querySelector('#modaleFileAdmin'))
     $('#modaleFileAdmin').modal('show')
   }
 
@@ -160,10 +162,12 @@ export default class {
     
 
   updateBill = (bill) => {
+    if (this.firestore) {
     return this.firestore
       .bill(bill.id)
       .update(bill)
       .then(bill => bill)
       .catch(error => error)
+    }
   }
 }
