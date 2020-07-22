@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1595453533657" clover="3.2.0">
-  <project timestamp="1595453533657" name="All files">
-    <metrics statements="219" coveredstatements="140" conditionals="96" coveredconditionals="73" methods="71" coveredmethods="38" elements="386" coveredelements="251" complexity="0" loc="219" ncloc="219" packages="3" files="15" classes="15"/>
+<coverage generated="1595459848437" clover="3.2.0">
+  <project timestamp="1595459848437" name="All files">
+    <metrics statements="220" coveredstatements="144" conditionals="98" coveredconditionals="74" methods="71" coveredmethods="36" elements="389" coveredelements="254" complexity="0" loc="220" ncloc="220" packages="3" files="15" classes="15"/>
     <package name="constants">
       <metrics statements="8" coveredstatements="8" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
       <file name="routes.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/constants/routes.js">
@@ -17,7 +17,7 @@
       </file>
     </package>
     <package name="containers">
-      <metrics statements="183" coveredstatements="107" conditionals="61" coveredconditionals="41" methods="56" coveredmethods="25"/>
+      <metrics statements="184" coveredstatements="111" conditionals="63" coveredconditionals="42" methods="56" coveredmethods="23"/>
       <file name="Bills.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/containers/Bills.js">
         <metrics statements="26" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="10" coveredmethods="0"/>
         <line num="7" count="0" type="stmt"/>
@@ -48,9 +48,9 @@
         <line num="48" count="0" type="stmt"/>
       </file>
       <file name="Dashboard.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/containers/Dashboard.js">
-        <metrics statements="76" coveredstatements="64" conditionals="39" coveredconditionals="37" methods="27" coveredmethods="18"/>
+        <metrics statements="77" coveredstatements="68" conditionals="41" coveredconditionals="38" methods="27" coveredmethods="16"/>
         <line num="7" count="6" type="stmt"/>
-        <line num="8" count="30" type="cond" truecount="4" falsecount="0"/>
+        <line num="8" count="27" type="cond" truecount="4" falsecount="0"/>
         <line num="10" count="24" type="stmt"/>
         <line num="14" count="6" type="stmt"/>
         <line num="15" count="8" type="stmt"/>
@@ -64,67 +64,68 @@
         <line num="46" count="1" type="stmt"/>
         <line num="48" count="1" type="stmt"/>
         <line num="50" count="1" type="stmt"/>
-        <line num="56" count="4" type="stmt"/>
-        <line num="57" count="4" type="stmt"/>
-        <line num="58" count="4" type="stmt"/>
-        <line num="59" count="4" type="stmt"/>
-        <line num="60" count="4" type="stmt"/>
-        <line num="61" count="4" type="stmt"/>
-        <line num="62" count="4" type="stmt"/>
-        <line num="63" count="4" type="stmt"/>
-        <line num="66" count="4" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
-        <line num="68" count="0" type="stmt"/>
-        <line num="69" count="0" type="stmt"/>
-        <line num="73" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="56" count="5" type="stmt"/>
+        <line num="57" count="5" type="stmt"/>
+        <line num="58" count="5" type="stmt"/>
+        <line num="59" count="5" type="stmt"/>
+        <line num="60" count="5" type="stmt"/>
+        <line num="61" count="5" type="stmt"/>
+        <line num="62" count="5" type="stmt"/>
+        <line num="63" count="5" type="stmt"/>
+        <line num="66" count="5" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="70" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="74" count="2" type="cond" truecount="4" falsecount="0"/>
-        <line num="75" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="76" count="1" type="stmt"/>
-        <line num="77" count="4" type="stmt"/>
-        <line num="79" count="1" type="stmt"/>
+        <line num="75" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="76" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="78" count="4" type="stmt"/>
         <line num="80" count="1" type="stmt"/>
         <line num="81" count="1" type="stmt"/>
         <line num="82" count="1" type="stmt"/>
-        <line num="84" count="1" type="stmt"/>
-        <line num="86" count="1" type="stmt"/>
-        <line num="89" count="1" type="stmt"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+        <line num="87" count="1" type="stmt"/>
         <line num="90" count="1" type="stmt"/>
-        <line num="92" count="2" type="stmt"/>
+        <line num="91" count="1" type="stmt"/>
         <line num="93" count="2" type="stmt"/>
         <line num="94" count="2" type="stmt"/>
-        <line num="97" count="4" type="stmt"/>
-        <line num="98" count="1" type="stmt"/>
-        <line num="103" count="1" type="stmt"/>
+        <line num="95" count="2" type="stmt"/>
+        <line num="98" count="5" type="stmt"/>
+        <line num="99" count="1" type="stmt"/>
         <line num="104" count="1" type="stmt"/>
-        <line num="107" count="4" type="stmt"/>
-        <line num="108" count="1" type="stmt"/>
-        <line num="113" count="1" type="stmt"/>
+        <line num="105" count="1" type="stmt"/>
+        <line num="108" count="5" type="stmt"/>
+        <line num="109" count="1" type="stmt"/>
         <line num="114" count="1" type="stmt"/>
-        <line num="118" count="6" type="cond" truecount="4" falsecount="0"/>
-        <line num="119" count="6" type="cond" truecount="4" falsecount="0"/>
-        <line num="120" count="6" type="cond" truecount="2" falsecount="0"/>
-        <line num="121" count="3" type="stmt"/>
+        <line num="115" count="1" type="stmt"/>
+        <line num="119" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="120" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="121" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="122" count="3" type="stmt"/>
-        <line num="124" count="3" type="stmt"/>
-        <line num="126" count="3" type="stmt"/>
-        <line num="127" count="3" type="stmt"/>
-        <line num="129" count="3" type="stmt"/>
-        <line num="132" count="6" type="stmt"/>
-        <line num="133" count="24" type="stmt"/>
-        <line num="136" count="6" type="stmt"/>
-        <line num="140" count="4" type="stmt"/>
-        <line num="141" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="142" count="0" type="stmt"/>
-        <line num="146" count="0" type="stmt"/>
+        <line num="123" count="3" type="stmt"/>
+        <line num="125" count="3" type="stmt"/>
+        <line num="127" count="1" type="stmt"/>
+        <line num="128" count="1" type="stmt"/>
+        <line num="130" count="1" type="stmt"/>
+        <line num="133" count="4" type="stmt"/>
+        <line num="134" count="16" type="stmt"/>
+        <line num="137" count="4" type="stmt"/>
+        <line num="141" count="5" type="stmt"/>
+        <line num="142" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="143" count="0" type="stmt"/>
         <line num="147" count="0" type="stmt"/>
-        <line num="153" count="0" type="stmt"/>
+        <line num="148" count="0" type="stmt"/>
         <line num="154" count="0" type="stmt"/>
-        <line num="156" count="0" type="stmt"/>
-        <line num="161" count="4" type="stmt"/>
-        <line num="162" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="163" count="0" type="stmt"/>
-        <line num="166" count="0" type="stmt"/>
+        <line num="155" count="0" type="stmt"/>
+        <line num="157" count="0" type="stmt"/>
+        <line num="162" count="5" type="stmt"/>
+        <line num="163" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="164" count="0" type="stmt"/>
         <line num="167" count="0" type="stmt"/>
+        <line num="168" count="0" type="stmt"/>
       </file>
       <file name="Login.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/containers/Login.js">
         <metrics statements="45" coveredstatements="36" conditionals="10" coveredconditionals="4" methods="9" coveredmethods="5"/>
@@ -176,11 +177,11 @@
       </file>
       <file name="Logout.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/containers/Logout.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="5" count="5" type="stmt"/>
-        <line num="6" count="5" type="stmt"/>
-        <line num="7" count="5" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="11" count="5" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
       </file>
@@ -238,20 +239,20 @@
       </file>
       <file name="DashboardFormUI.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/views/DashboardFormUI.js">
         <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
-        <line num="7" count="7" type="stmt"/>
-        <line num="26" count="7" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="26" count="8" type="stmt"/>
       </file>
       <file name="DashboardUI.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/views/DashboardUI.js">
         <metrics statements="5" coveredstatements="5" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
-        <line num="10" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="11" type="cond" truecount="2" falsecount="0"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="12" count="9" type="cond" truecount="2" falsecount="0"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="16" count="8" type="stmt"/>
+        <line num="12" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
       </file>
       <file name="ErrorPage.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/views/ErrorPage.js">
         <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="5" count="3" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
       </file>
       <file name="LoadingPage.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/views/LoadingPage.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -267,12 +268,12 @@
       </file>
       <file name="VerticalLayout.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/views/VerticalLayout.js">
         <metrics statements="6" coveredstatements="6" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
-        <line num="7" count="20" type="stmt"/>
-        <line num="8" count="20" type="cond" truecount="2" falsecount="0"/>
-        <line num="9" count="5" type="stmt"/>
-        <line num="11" count="20" type="cond" truecount="4" falsecount="0"/>
+        <line num="7" count="21" type="stmt"/>
+        <line num="8" count="21" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="11" count="21" type="cond" truecount="4" falsecount="0"/>
         <line num="12" count="1" type="stmt"/>
-        <line num="29" count="19" type="stmt"/>
+        <line num="29" count="20" type="stmt"/>
       </file>
     </package>
   </project>

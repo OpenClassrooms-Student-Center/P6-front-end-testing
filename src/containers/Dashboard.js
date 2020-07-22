@@ -3,7 +3,6 @@ import DashboardFormUI from '../views/DashboardFormUI.js'
 import BigBillableIcon from '../assets/svg/big_billable.js'
 import { ROUTES_PATH } from '../constants/routes.js'
 import Logout from "./Logout.js"
-import { fireEvent } from '@testing-library/dom'
 
 export const filteredBills = (data, status) => {
   return (data && data.length) ?
@@ -67,7 +66,8 @@ export default class {
   handleClickIconEye = () => {
     const billUrl = $('#icon-eye-d').attr("data-bill-url")
     $('#modaleFileAdmin1').find(".modal-body").html(`<img src=${billUrl} />`)
-    $('#modaleFileAdmin1').modal('show')
+    console.log(typeof $('#modaleFileAdmin1').modal)
+    if (typeof $('#modaleFileAdmin1').modal === 'function') $('#modaleFileAdmin1').modal('show')
   }
 
   handleEditTicket(e, bill, bills) {
@@ -141,6 +141,7 @@ export default class {
   getBillsAllUsers = () => {
     if (this.firestore) {
       return this.firestore
+      .bills()
       .get()
       .then(snapshot => {
         const bills = snapshot.docs
@@ -150,7 +151,6 @@ export default class {
           date: doc.data().date,
           status: doc.data().status
         }))
-        console.log(JSON.stringify(bills))
         return bills
       })
       .catch(error => error)
@@ -161,7 +161,8 @@ export default class {
   updateBill = (bill) => {
     if (this.firestore) {
     return this.firestore
-      .post(bill)
+      .bill(bill.id)
+      .update(bill)
       .then(bill => bill)
       .catch(error => error)
     }

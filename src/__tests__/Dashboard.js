@@ -5,7 +5,7 @@ import DashboardUI from "../views/DashboardUI.js"
 import Dashboard, { filteredBills, cards } from "../containers/Dashboard.js"
 import { ROUTES } from "../constants/routes"
 import { localStorageMock } from "../__mocks__/localStorage.js"
-import firebase from '../__mocks__/firebase';
+import firebase from '../__mocks__/firebase'
 
 const bills = [{
     "id": "47qAXb6fIm2zOKkLzMro",
@@ -133,7 +133,8 @@ describe('Given I am connected as an Admin', () => {
       icon1.addEventListener('click', handleShowTickets1)
       userEvent.click(icon1)
       expect(handleShowTickets1).toHaveBeenCalled()
-      
+      userEvent.click(icon1)
+
       icon2.addEventListener('click', handleShowTickets2)
       userEvent.click(icon2)
       expect(handleShowTickets2).toHaveBeenCalled()
@@ -233,34 +234,34 @@ describe('Given I am connected as Admin, and I am on Dashboard page, and I click
   })
 })
 
-// describe('Given I am connected as Admin and I am on Dashboard page and I clicked on a bill', () => {
-//   describe('When I click on the icon eye', () => {
-//     test('A modal should open', () => {
-//       Object.defineProperty(window, 'localStorage', { value: localStorageMock })
-//       window.localStorage.setItem('user', JSON.stringify({
-//         type: 'Admin'
-//       }))
-//       const html = DashboardFormUI(bills[0])
-//       document.body.innerHTML = html
-//       const onNavigate = (pathname) => {
-//         document.body.innerHTML = ROUTES({ pathname })
-//       }
-//       const firestore = null
-//       const dashboard = new Dashboard({
-//         document, onNavigate, firestore, bills, localStorage: window.localStorage
-//       })
+describe('Given I am connected as Admin and I am on Dashboard page and I clicked on a bill', () => {
+  describe('When I click on the icon eye', () => {
+    test('A modal should open', () => {
+      Object.defineProperty(window, 'localStorage', { value: localStorageMock })
+      window.localStorage.setItem('user', JSON.stringify({
+        type: 'Admin'
+      }))
+      const html = DashboardFormUI(bills[0])
+      document.body.innerHTML = html
+      const onNavigate = (pathname) => {
+        document.body.innerHTML = ROUTES({ pathname })
+      }
+      const firestore = null
+      const dashboard = new Dashboard({
+        document, onNavigate, firestore, bills, localStorage: window.localStorage
+      })
 
-//       const handleClickIconEye = jest.fn(dashboard.handleClickIconEye)
-//       const eye = screen.getByTestId('icon-eye-d')
-//       eye.addEventListener('click', handleClickIconEye)
-//       userEvent.click(eye)
-//       expect(handleClickIconEye).toHaveBeenCalled()
+      const handleClickIconEye = jest.fn(dashboard.handleClickIconEye)
+      const eye = screen.getByTestId('icon-eye-d')
+      eye.addEventListener('click', handleClickIconEye)
+      userEvent.click(eye)
+      expect(handleClickIconEye).toHaveBeenCalled()
 
-//       const modale = screen.getByTestId('modaleFileAdmin')
-//       expect(modale).toBeTruthy()
-//     })
-//   })
-// })
+      const modale = screen.getByTestId('modaleFileAdmin')
+      expect(modale).toBeTruthy()
+    })
+  })
+})
 
 // test d'intégration GET
 describe("Given I am a user connected as Admin", () => {
