@@ -3,6 +3,7 @@ import DashboardFormUI from '../views/DashboardFormUI.js'
 import BigBillableIcon from '../assets/svg/big_billable.js'
 import { ROUTES_PATH } from '../constants/routes.js'
 import Logout from "./Logout.js"
+import { fireEvent } from '@testing-library/dom'
 
 export const filteredBills = (data, status) => {
   return (data && data.length) ?
@@ -140,7 +141,6 @@ export default class {
   getBillsAllUsers = () => {
     if (this.firestore) {
       return this.firestore
-      .bills()
       .get()
       .then(snapshot => {
         const bills = snapshot.docs
@@ -161,8 +161,7 @@ export default class {
   updateBill = (bill) => {
     if (this.firestore) {
     return this.firestore
-      .bill(bill.id)
-      .update(bill)
+      .post(bill)
       .then(bill => bill)
       .catch(error => error)
     }
