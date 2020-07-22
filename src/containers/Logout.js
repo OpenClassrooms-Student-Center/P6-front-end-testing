@@ -1,5 +1,4 @@
 import { ROUTES_PATH } from '../constants/routes.js'
-import $ from '../external/jquery.js'
 
 export default class Logout {
   constructor({ document, onNavigate, localStorage }) {
