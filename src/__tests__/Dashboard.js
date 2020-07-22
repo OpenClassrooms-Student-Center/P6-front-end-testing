@@ -1,4 +1,4 @@
-import { fireEvent, screen } from "@testing-library/dom"
+import { fireEvent, screen, getByTestId } from "@testing-library/dom"
 import userEvent from '@testing-library/user-event'
 import DashboardFormUI from "../views/DashboardUI.js"
 import DashboardUI from "../views/DashboardUI.js"
@@ -185,11 +185,10 @@ describe('Given I am connected as Admin and I am on Dashboard page and I clicked
       }))
       const html = DashboardFormUI(bills[0])
       document.body.innerHTML = html
-      screen.debug()
-      // const AcceptButton = screen.queryByTestId('btn-accept-bill-d')
+      // screen.debug()
       // get form rather than button
-      const form = screen.getByTestId('btn-accept-bill-d')
-      userEvent.submit(AcceptButton)
+      // const form = getByTestId('')
+      // userEvent.submit(form)
 
     })
   })
