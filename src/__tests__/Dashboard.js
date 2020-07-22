@@ -5,6 +5,7 @@ import DashboardUI from "../views/DashboardUI.js"
 import Dashboard, { filteredBills, cards } from "../containers/Dashboard.js"
 import { ROUTES } from "../constants/routes"
 import { localStorageMock } from "../__mocks__/localStorage.js"
+import * as firebase from 'firebase/app';
 
 const bills = [{
     "id": "47qAXb6fIm2zOKkLzMro",
@@ -229,7 +230,7 @@ describe('Given I am connected as Admin, and I am on Dashboard page, and I click
 
 describe('Given I am connected as Admin and I am on Dashboard page and I clicked on a bill', () => {
   describe('When I click on the icon eye', () => {
-    test('A modal should open, showing the file', () => {
+    test('A modal should open', () => {
       Object.defineProperty(window, 'localStorage', { value: localStorageMock })
       window.localStorage.setItem('user', JSON.stringify({
         type: 'Admin'
@@ -253,6 +254,33 @@ describe('Given I am connected as Admin and I am on Dashboard page and I clicked
       const modale = screen.getByTestId('modaleFileAdmin')
       expect(modale).toBeTruthy()
     })
+  })
+})
+
+describe("Given I am a user connected as Admin", () => {
+  describe("When I navigate to Dashboard", () => {
+    test("Then it should fetch bills from all users", async () => {
+      const getSpy = jest.spyOn(axios, "get")
+      const html = DashboardUI({ data: bills })
+      document.body.innerHTML = html
+      expect(getSpy).toBeCalled()
+    })
+    // test("fetches messages from an API and fails with 404 message error", async () => {
+    //   axios.get.mockImplementationOnce(() =>
+    //     Promise.reject(new Error("Erreur 404"))
+    //   )
+    //   render(Provider(<MessageList />))
+    //   const message = await screen.findByText(/Erreur 404/)
+    //   expect(message).toBeInTheDocument()
+    // })
+    // test("fetches messages from an API and fails with 500 message error", async () => {
+    //   axios.get.mockImplementationOnce(() =>
+    //     Promise.reject(new Error("Erreur 500"))
+    //   )
+    //   render(Provider(<MessageList />))
+    //   const message = await screen.findByText(/Erreur 500/)
+    //   expect(message).toBeInTheDocument()
+    // })
   })
 })
 

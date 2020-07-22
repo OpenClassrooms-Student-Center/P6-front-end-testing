@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1595449833181" clover="3.2.0">
-  <project timestamp="1595449833181" name="All files">
-    <metrics statements="219" coveredstatements="143" conditionals="98" coveredconditionals="74" methods="71" coveredmethods="38" elements="388" coveredelements="255" complexity="0" loc="219" ncloc="219" packages="3" files="15" classes="15"/>
+<coverage generated="1595452679297" clover="3.2.0">
+  <project timestamp="1595452679297" name="All files">
+    <metrics statements="219" coveredstatements="143" conditionals="98" coveredconditionals="74" methods="71" coveredmethods="39" elements="388" coveredelements="256" complexity="0" loc="219" ncloc="219" packages="3" files="15" classes="15"/>
     <package name="constants">
       <metrics statements="8" coveredstatements="8" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
       <file name="routes.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/constants/routes.js">
@@ -218,7 +218,7 @@
       </file>
     </package>
     <package name="views">
-      <metrics statements="28" coveredstatements="25" conditionals="30" coveredconditionals="27" methods="14" coveredmethods="11"/>
+      <metrics statements="28" coveredstatements="25" conditionals="30" coveredconditionals="27" methods="14" coveredmethods="12"/>
       <file name="Actions.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/views/Actions.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="2" type="stmt"/>
@@ -237,8 +237,8 @@
         <line num="51" count="4" type="stmt"/>
       </file>
       <file name="DashboardFormUI.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/views/DashboardFormUI.js">
-        <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="1"/>
-        <line num="7" count="7" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="7" count="8" type="stmt"/>
         <line num="26" count="8" type="stmt"/>
       </file>
       <file name="DashboardUI.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/views/DashboardUI.js">
