@@ -45,7 +45,7 @@ export default ({ data: bills, loading, error }) => {
   if (loading) {
     return LoadingPage()
   } else if (error) {
-    return ErrorPage()
+    return ErrorPage(error)
   }
   
   return (`
