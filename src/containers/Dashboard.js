@@ -19,10 +19,10 @@ export const card = (bill) => {
   firstAndLastNames.split('.')[1] : firstAndLastNames
 
   return (`
-    <div class='bill-card'>
+    <div class='bill-card' id='open-bill${bill.id}' data-testid='open-bill${bill.id}'>
       <div class='bill-card-name-container'>
         <div class='bill-card-name'> ${firstName} ${lastName} </div>
-        <span class='bill-card-grey' id='open-bill${bill.id}' data-testid='open-bill${bill.id}' > ... </span>
+        <span class='bill-card-grey'> ... </span>
       </div>
       <div class='name-price-container'>
         <span> ${bill.name} </span>
@@ -75,14 +75,14 @@ export default class {
     if (this.id === undefined || this.id !== bill.id) this.id = bill.id
     if (this.counter % 2 === 0) {
       bills.forEach(b => {
-        $(`#open-bill${b.id}`).parent().parent().css({ background: '#0D5AE5' })
+        $(`#open-bill${b.id}`).css({ background: '#0D5AE5' })
       })
-      $(`#open-bill${bill.id}`).parent().parent().css({ background: '#2A2B35' })
+      $(`#open-bill${bill.id}`).css({ background: '#2A2B35' })
       $('.dashboard-right-container div').html(DashboardFormUI(bill))
       $('.vertical-navbar').css({ height: '150vh' })
       this.counter ++
     } else {
-      $(`#open-bill${bill.id}`).parent().parent().css({ background: '#0D5AE5' })
+      $(`#open-bill${bill.id}`).css({ background: '#0D5AE5' })
 
       $('.dashboard-right-container div').html(`
         <div id="big-billable-icon"> ${BigBillableIcon} </div>
