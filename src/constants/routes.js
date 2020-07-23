@@ -17,7 +17,7 @@ export const ROUTES = ({ pathname, data, error, loading }) => {
     case ROUTES_PATH['Bills']:
       return BillsUI({ data, error, loading })
     case ROUTES_PATH['NewBill']:
-      return NewBillUI({ data, error, loading })
+      return NewBillUI()
     case ROUTES_PATH['Dashboard']:
       return DashboardUI({ data, error, loading })
     default:
