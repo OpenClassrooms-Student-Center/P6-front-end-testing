@@ -21,7 +21,8 @@ export default () => {
       pathname,
       window.location.origin + pathname
     )
-
+    console.log("window.history.state", window.history.state)
+    
     if (pathname === ROUTES_PATH['Login']) {
       rootDiv.innerHTML = ROUTES({ pathname })
       document.body.style.backgroundColor="#0E5AE5"
@@ -64,10 +65,12 @@ export default () => {
   
   window.onpopstate = (e) => {
     const user = JSON.parse(localStorage.getItem('user'))
+    console.log('onpopstate', e)
     if (window.location.pathname === "/" && !user) {
       document.body.style.backgroundColor="#0E5AE5"
-      rootDiv.innerHTML = ROUTES[window.location.pathname]
-    } else if (user) {
+      rootDiv.innerHTML = ROUTES({ pathname: window.location.pathname })
+    }
+    else if (user) {
       onNavigate(PREVIOUS_LOCATION)
     }
   }
