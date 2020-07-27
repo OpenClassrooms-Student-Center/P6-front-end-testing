@@ -1,7 +1,7 @@
 import VerticalLayout from './VerticalLayout.js'
 import ErrorPage from "./ErrorPage.js"
 import LoadingPage from "./LoadingPage.js"
-import BigBillableIcon from '../assets/svg/big_billable.js'
+import BigBilledIcon from '../assets/svg/big_billed.js'
 import { filteredBills } from '../containers/Dashboard.js'
 import ArrowIcon from '../assets/svg/arrow.js'
 
@@ -42,7 +42,7 @@ export default ({ data, loading, error }) => {
         </div>
         <div class="dashboard-right-container">
           <h3> Validations </h3>
-          <div><div id="big-billable-icon" data-testid="big-billable-icon"> ${BigBillableIcon} </div></div>
+          <div><div id="big-billed-icon" data-testid="big-billed-icon"> ${BigBilledIcon} </div></div>
       </div>
     </div>`
   )

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1595547629548" clover="3.2.0">
-  <project timestamp="1595547629548" name="All files">
-    <metrics statements="219" coveredstatements="137" conditionals="98" coveredconditionals="72" methods="71" coveredmethods="38" elements="388" coveredelements="247" complexity="0" loc="219" ncloc="219" packages="3" files="15" classes="15"/>
+<coverage generated="1595891061239" clover="3.2.0">
+  <project timestamp="1595891061239" name="All files">
+    <metrics statements="219" coveredstatements="145" conditionals="98" coveredconditionals="73" methods="71" coveredmethods="38" elements="388" coveredelements="256" complexity="0" loc="219" ncloc="219" packages="3" files="15" classes="15"/>
     <package name="constants">
       <metrics statements="8" coveredstatements="8" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
       <file name="routes.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/constants/routes.js">
         <metrics statements="8" coveredstatements="8" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="6" count="6" type="stmt"/>
         <line num="13" count="6" type="stmt"/>
-        <line num="14" count="11" type="cond" truecount="5" falsecount="0"/>
+        <line num="14" count="13" type="cond" truecount="5" falsecount="0"/>
         <line num="16" count="3" type="stmt"/>
         <line num="18" count="3" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
       </file>
     </package>
     <package name="containers">
-      <metrics statements="183" coveredstatements="103" conditionals="63" coveredconditionals="39" methods="56" coveredmethods="23"/>
+      <metrics statements="183" coveredstatements="111" conditionals="63" coveredconditionals="40" methods="56" coveredmethods="23"/>
       <file name="Bills.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/containers/Bills.js">
         <metrics statements="26" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="10" coveredmethods="0"/>
         <line num="7" count="0" type="stmt"/>
@@ -50,7 +50,7 @@
       <file name="Dashboard.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/containers/Dashboard.js">
         <metrics statements="76" coveredstatements="68" conditionals="41" coveredconditionals="36" methods="27" coveredmethods="16"/>
         <line num="7" count="6" type="stmt"/>
-        <line num="8" count="21" type="cond" truecount="4" falsecount="0"/>
+        <line num="8" count="27" type="cond" truecount="4" falsecount="0"/>
         <line num="10" count="24" type="stmt"/>
         <line num="14" count="6" type="stmt"/>
         <line num="15" count="8" type="stmt"/>
@@ -127,7 +127,7 @@
         <line num="167" count="0" type="stmt"/>
       </file>
       <file name="Login.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/containers/Login.js">
-        <metrics statements="45" coveredstatements="28" conditionals="10" coveredconditionals="3" methods="9" coveredmethods="5"/>
+        <metrics statements="45" coveredstatements="36" conditionals="10" coveredconditionals="4" methods="9" coveredmethods="5"/>
         <line num="3" count="1" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
@@ -150,29 +150,29 @@
         <line num="32" count="2" type="stmt"/>
         <line num="35" count="2" type="stmt"/>
         <line num="36" count="2" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="44" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="47" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="44" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
         <line num="52" count="2" type="stmt"/>
-        <line num="53" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="53" count="4" type="cond" truecount="1" falsecount="1"/>
         <line num="54" count="0" type="stmt"/>
         <line num="58" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="59" count="0" type="stmt"/>
         <line num="60" count="0" type="stmt"/>
         <line num="62" count="0" type="stmt"/>
         <line num="65" count="0" type="stmt"/>
-        <line num="67" count="2" type="stmt"/>
+        <line num="67" count="4" type="stmt"/>
         <line num="71" count="2" type="stmt"/>
-        <line num="72" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="72" count="4" type="cond" truecount="1" falsecount="1"/>
         <line num="73" count="0" type="stmt"/>
         <line num="80" count="0" type="stmt"/>
         <line num="81" count="0" type="stmt"/>
-        <line num="83" count="2" type="stmt"/>
+        <line num="83" count="4" type="stmt"/>
       </file>
       <file name="Logout.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/containers/Logout.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -243,11 +243,11 @@
       </file>
       <file name="DashboardUI.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/views/DashboardUI.js">
         <metrics statements="5" coveredstatements="5" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
-        <line num="10" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="11" type="cond" truecount="2" falsecount="0"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="12" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="10" type="cond" truecount="2" falsecount="0"/>
         <line num="13" count="3" type="stmt"/>
-        <line num="16" count="5" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
       </file>
       <file name="ErrorPage.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/views/ErrorPage.js">
         <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
@@ -267,12 +267,12 @@
       </file>
       <file name="VerticalLayout.js" path="/Users/athean/code/TheMakery/P6-front-end-testing/src/views/VerticalLayout.js">
         <metrics statements="6" coveredstatements="6" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
-        <line num="7" count="20" type="stmt"/>
-        <line num="8" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="22" type="stmt"/>
+        <line num="8" count="22" type="cond" truecount="2" falsecount="0"/>
         <line num="9" count="7" type="stmt"/>
-        <line num="11" count="20" type="cond" truecount="4" falsecount="0"/>
+        <line num="11" count="22" type="cond" truecount="4" falsecount="0"/>
         <line num="12" count="1" type="stmt"/>
-        <line num="29" count="19" type="stmt"/>
+        <line num="29" count="21" type="stmt"/>
       </file>
     </package>
   </project>
