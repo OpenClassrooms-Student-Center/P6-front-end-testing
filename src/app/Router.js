@@ -14,14 +14,13 @@ export default () => {
   rootDiv.innerHTML = ROUTES({ pathname: window.location.pathname })
 
   window.onNavigate = (pathname) => {
-    console.log('on navigate')
+    console.log('on navigate');
 
     window.history.pushState(
       {},
       pathname,
       window.location.origin + pathname
     )
-    console.log("window.history.state", window.history.state)
     
     if (pathname === ROUTES_PATH['Login']) {
       rootDiv.innerHTML = ROUTES({ pathname })
