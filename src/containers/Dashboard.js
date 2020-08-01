@@ -21,7 +21,7 @@ export const filteredBills = (data, status) => {
           (bill.status === status) &&
           [...USERS_TEST, userEmail].includes(bill.email)
       }
-      
+
       return selectCondition
     }) : []
 }
@@ -80,7 +80,8 @@ export default class {
 
   handleClickIconEye = () => {
     const billUrl = $('#icon-eye-d').attr("data-bill-url")
-    $('#modaleFileAdmin1').find(".modal-body").html(`<img src=${billUrl} />`)
+    const imgWidth = Math.floor($('#modaleFileAdmin1').width() * 0.8)
+    $('#modaleFileAdmin1').find(".modal-body").html(`<div style='text-align: center;'><img width=${imgWidth} src=${billUrl} /></div>`)
     if (typeof $('#modaleFileAdmin1').modal === 'function') $('#modaleFileAdmin1').modal('show')
   }
 
