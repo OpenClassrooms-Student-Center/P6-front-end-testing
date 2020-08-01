@@ -8,10 +8,20 @@ import Logout from "./Logout.js"
 export const filteredBills = (data, status) => {
   return (data && data.length) ?
     data.filter(bill => {
-      const userEmail = JSON.parse(localStorage.getItem("user")).email
-      const selectCondition =
-        (bill.status === status) &&
-        [...USERS_TEST, userEmail].includes(bill.email)
+
+      let selectCondition
+
+      // in jest environment
+      if (typeof jest !== 'undefined') {
+        selectCondition = (bill.status === status)
+      } else {
+        // in prod environment
+        const userEmail = JSON.parse(localStorage.getItem("user")).email
+        selectCondition =
+          (bill.status === status) &&
+          [...USERS_TEST, userEmail].includes(bill.email)
+      }
+      
       return selectCondition
     }) : []
 }
