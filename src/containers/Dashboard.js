@@ -2,12 +2,17 @@ import { formatDate } from '../app/format.js'
 import DashboardFormUI from '../views/DashboardFormUI.js'
 import BigBilledIcon from '../assets/svg/big_billed.js'
 import { ROUTES_PATH } from '../constants/routes.js'
+import USERS_TEST from '../constants/usersTest.js'
 import Logout from "./Logout.js"
 
 export const filteredBills = (data, status) => {
   return (data && data.length) ?
     data.filter(bill => {
-      return bill.status === status
+      const userEmail = JSON.parse(localStorage.getItem("user")).email
+      const selectCondition =
+        (bill.status === status) &&
+        [...USERS_TEST, userEmail].includes(bill.email)
+      return selectCondition
     }) : []
 }
 
@@ -66,7 +71,6 @@ export default class {
   handleClickIconEye = () => {
     const billUrl = $('#icon-eye-d').attr("data-bill-url")
     $('#modaleFileAdmin1').find(".modal-body").html(`<img src=${billUrl} />`)
-    console.log(typeof $('#modaleFileAdmin1').modal)
     if (typeof $('#modaleFileAdmin1').modal === 'function') $('#modaleFileAdmin1').modal('show')
   }
 
@@ -153,7 +157,7 @@ export default class {
         }))
         return bills
       })
-      .catch(error => error)
+      .catch(console.log)
     }
   }
     
@@ -164,7 +168,7 @@ export default class {
       .bill(bill.id)
       .update(bill)
       .then(bill => bill)
-      .catch(error => error)
+      .catch(console.log)
     }
   }
 }
